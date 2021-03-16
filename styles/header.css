@@ -1,0 +1,29 @@
+@font-face {
+	font-family: "myfont";
+ 	src: url("../font/PSL029pro.ttf");
+}
+body {
+  font-family: "myfont",sans-serif !important;
+}
+.red {
+    background-color: red;
+  }
+.search-red {
+  background-color: red;
+  
+}
+p, span, h1  {
+  font-family: "myfont",sans-serif;
+}
+.Navbar-text h5{
+  color: black;
+  letter-spacing: 0.5px;
+  padding-left: 10px;
+  padding-right: 10px;  
+  font-size: 22px;
+}
+.Navbar-text :hover{
+
+  color: red;
+  transition: 1s;
+}
