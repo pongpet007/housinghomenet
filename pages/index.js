@@ -1,12 +1,20 @@
 import React from 'react'
 import Headers from './components/Headers.js'
+import { useEffect } from 'react'
+import { useRouter } from "next/router"
+
+export default function index() {
+  const router = useRouter()
+
+  // useEffect(() => {
+  //   router.push("testredux", '', { shallow: true })
+  // }, [])
 
 
-export default function index(){
   return (
     <div>
-      <Headers />
-     
+       <Headers />
     </div>
+
   )
 }

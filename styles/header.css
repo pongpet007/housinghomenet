@@ -23,7 +23,6 @@ p, span, h1  {
   font-size: 22px;
 }
 .Navbar-text :hover{
-
   color: red;
   transition: 1s;
 }
