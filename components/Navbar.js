@@ -2,7 +2,7 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Collapse from 'react-bootstrap/Collapse'
 
-function Navbar() {
+const Navbar = ()=> {
     const [open, setOpen] = useState(false);
   
     return (
@@ -24,5 +24,5 @@ function Navbar() {
       </>
     );
   }
-  
-  render(<Navbar />);
+
+  export default Navbar

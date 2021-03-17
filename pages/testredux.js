@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 import { setInfo } from "../redux/actions/main"
 
 const testredux = (props) => {
-    console.log(props);
+    // console.log(props);
     const xname = props.userInfo.name
     const { setInfo } = props;
     const [name, setName] = useState(xname)
