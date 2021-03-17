@@ -10,109 +10,86 @@ import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col'
-
+import Image from 'react-bootstrap/Image'
+       
 
 const Headers = () => {
     return (
+
         <div>
-        
-        <Container fluid>
-            
-           <Navbar expand="lg">
-           <Navbar.Toggle aria-controls="basic-navbar-nav" /> 
-           <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ml-auto Navbar-text">
-                        <Nav.Link href="#home"><h5>หน้าแรก</h5></Nav.Link>
-                        <Nav.Link href="#home"><h5>โครงการใหม่</h5></Nav.Link>
-                        <Nav.Link href="#home"><h5>ที่อยู่อาศัย</h5></Nav.Link>
-                        <Nav.Link href="#home"><h5>ที่ดิน</h5></Nav.Link>
-                        <Nav.Link href="#home"><h5>งานบริการ</h5></Nav.Link>
-                        <Nav.Link href="#home"><h5>ให้เช่า</h5></Nav.Link>
-                    </Nav> 
-            <Navbar.Brand className="ml-auto mr-auto " href="#home">React-Bootstrap</Navbar.Brand>
-            <Nav className="ml-auto mr-auto">
-         
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#link">Link</Nav.Link>
-                <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                </NavDropdown>
-            </Nav>
-                {/*             
+             <head>
+                <script defer src="/your-path-to-fontawesome/js/brands.js"></script>
+                <script defer src="/your-path-to-fontawesome/js/solid.js"></script>
+                <script defer src="/your-path-to-fontawesome/js/fontawesome.js"></script>
+            </head>
+
+            <div className="width-header">
+
+                <Navbar expand="lg">
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="Navbar-text">
+                            <Nav.Link href="#home"><h5>หน้าแรก</h5></Nav.Link>
+                            <Nav.Link href="#home"><h5>โครงการใหม่</h5></Nav.Link>
+                            <Nav.Link href="#home"><h5>ที่อยู่อาศัย</h5></Nav.Link>
+                            <Nav.Link href="#home"><h5>ที่ดิน</h5></Nav.Link>
+                            <Nav.Link href="#home"><h5>งานบริการ</h5></Nav.Link>
+                            <Nav.Link href="#home"><h5>ให้เช่า</h5></Nav.Link>
+                        </Nav>
+                        <Navbar.Brand className="ml-auto mr-auto " href="#home">React-Bootstrap</Navbar.Brand>
+                        <Nav className="mr-auto font-28">
+
+                            <Nav.Link href="#home">Home</Nav.Link>
+                            <Nav.Link href="#link">Link     <i classname="fas fa-user"></i></Nav.Link>
+                            <NavDropdown title="เปลี่ยนภาษา" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="#action/3.1"><h5>Action</h5></NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.2"><h5>Another action</h5></NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3"><h5>Something</h5></NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="#action/3.4"><h5>Separated link</h5></NavDropdown.Item>
+                            </NavDropdown>
+                            <Button variant="outline-success">Search</Button>
+                       
+
+                        </Nav>
+                        {/*             
             
                
                 <Form inline>
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                 <Button variant="outline-success">Search</Button>
                 </Form> */}
-            </Navbar.Collapse>
-            </Navbar>
-                            <nav className="navbar navbar-inverse " role="navigation">
-                <div className="container">
-                   
-                    <div className="navbar-header">
-                    <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-                        <span className="sr-only">Toggle navigation</span>
-                        <span className="icon-bar"></span>
-                        <span className="icon-bar"></span>
-                        <span className="icon-bar"></span>
-                    </button>
-                    
-                    </div>
-                    <a className="navbar-brand" href="#">Brand</a>
-                   
-                    <div className="collapse navbar-collapse" id="navbar-collapse-1">
-                    
-                    <ul className="nav navbar-nav navbar-left">
-                        <li><a href="#">Menu</a></li>
-                        <li><a href="#">Menu</a></li>
-                    </ul>
-                    <ul className="nav navbar-nav navbar-right">
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                        <li className="dropdown">
-                        <a href="#" className="dropdown-toggle" data-toggle="dropdown">Dropdown <b className="caret"></b></a>
-                        <ul className="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li className="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                        </li>
-                    </ul>
-                    </div>
-                </div>
-                </nav>
-                <div className="row">
-                <div className="container">
-                    <div className="col-md-12">
-                    <h2>Navbar Centered Logo</h2>
-                    </div>
-                </div>
-                </div>
-        </Container>
+                    </Navbar.Collapse>
+                </Navbar>
+            </div>
 
-        
 
-        <div className ="search-red">
-            <Container className="red">
-                <Row>
-                 <Col>
-                 <h1>หัวข้อ</h1>
 
-                </Col>
-                </Row>
-               
-             
-            </Container>
-        </div>       
-        
+            <div className="search-red">
+                <Container className="red">
+                    <Row>
+                        <Col>
+                            <h1>หัวข้อ</h1>
+
+                        </Col>
+                    </Row>
+
+
+                </Container>
+            </div>
+            <div className="width-header">
+                <Container className="red">
+                    <Row>
+                        <Col>
+                            <h1>หัวข้อ</h1>
+
+                        </Col>
+                    </Row>
+
+
+                </Container>
+            </div>
+
         </div>
     )
 }

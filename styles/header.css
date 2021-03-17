@@ -20,9 +20,21 @@ p, span, h1  {
   letter-spacing: 0.5px;
   padding-left: 10px;
   padding-right: 10px;  
-  font-size: 22px;
+  font-size: 28px;
 }
 .Navbar-text :hover{
   color: red;
   transition: 1s;
+}
+.width-header {
+  width: 1560px;
+  margin: auto;
+  padding: auto;
+}
+.font-28 {
+  color: black;
+  letter-spacing: 0.5px;
+  padding-left: 10px;
+  padding-right: 10px;  
+  font-size: 28px;
 }
