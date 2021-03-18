@@ -15,7 +15,9 @@ function MyApp({ Component, pageProps }) {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge, chrome=1" />
           <meta name="author" content="สินค้าอุตสาหกรรม Brandex Directory Co., Ltd." />
-          <meta name="robots" content="index,follow" />       
+          <meta name="robots" content="index,follow" />   
+          <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+              
       </Head>
       <Headers />
       <Component {...pageProps} />
