@@ -29,17 +29,6 @@ const Headers = () => {
                             <Nav.Link href="#home"><h5>งานบริการ</h5></Nav.Link>
                             <Nav.Link href="#home"><h5>ให้เช่า</h5></Nav.Link>
                         </Nav>
-<<<<<<< HEAD
-                        <Navbar.Brand className="ml-auto mr-auto " href="#home">React-Bootstrap</Navbar.Brand>
-                        <Nav className="mr-auto font-28">
-
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#link">Link     <i className="fas fa-user"></i></Nav.Link>
-                            <NavDropdown title="เปลี่ยนภาษา" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1"><h5>Action</h5></NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2"><h5>Another action</h5></NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3"><h5>Something</h5></NavDropdown.Item>
-=======
                         <Navbar.Brand className=" mr-auto showlogo" href="#home"> 
                         
                         <Image
@@ -58,7 +47,6 @@ const Headers = () => {
                             <NavDropdown title="เข้าสู่ระบบ" id="basic-nav-dropdown"  className="mr-3 ml-3">
                                 <NavDropdown.Item href="#action/3.1"><h5><i className="fas fa-user mr-2"></i>บัญชีของฉัน</h5></NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.3"><h5><i className="fas fa-key mr-1"></i>ลืมรหัสผ่าน</h5></NavDropdown.Item>
->>>>>>> d5f64d2ca7295d712e40b2451e220b2abb0cca08
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item href="#action/3.4"><h5><i className="fas fa-user-circle mr-1"></i>ลงทะเบียน</h5></NavDropdown.Item>
                             </NavDropdown>
