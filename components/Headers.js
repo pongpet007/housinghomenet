@@ -40,7 +40,7 @@ const Headers = () => {
                         <Nav className="mr-auto font-28">
 
                             <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#link">Link     <i classname="fas fa-user"></i></Nav.Link>
+                            <Nav.Link href="#link">Link     <i className="fas fa-user"></i></Nav.Link>
                             <NavDropdown title="เปลี่ยนภาษา" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1"><h5>Action</h5></NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2"><h5>Another action</h5></NavDropdown.Item>
