@@ -6,7 +6,7 @@ import { NavDropdown } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import Image from 'next/image'
 import Link from 'next/link'
-import { Container } from 'next/app';
+import { Container } from 'react-bootstrap';
 
        
 
@@ -15,7 +15,6 @@ const Headers = () => {
 
         <div>
            
-
             <Container fluid>
 
                 <Navbar expand="lg">
