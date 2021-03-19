@@ -1,4 +1,3 @@
-
 import '../styles/header.css'
 import '../styles/globals.css'
 import React from "react"
@@ -16,7 +15,7 @@ function MyApp({ Component, pageProps }) {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge, chrome=1" />
           <meta name="author" content="สินค้าอุตสาหกรรม Brandex Directory Co., Ltd." />
           <meta name="robots" content="index,follow" />   
-          <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+          <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossOrigin="anonymous"></script>
               
       </Head>
       <Headers />
