@@ -1,6 +1,6 @@
 import React from 'react'
 
-const products = ()=>({products}) {
+const products = (props)=>{
     return (
         <div>
             <h1>xx</h1>
@@ -22,4 +22,4 @@ const products = ()=>({products}) {
 //     }
 //   }
 
-  export default index
+  export default products
