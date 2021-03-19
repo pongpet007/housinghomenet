@@ -3,6 +3,7 @@ import '../styles/globals.css'
 import React from "react"
 import Headers from '../components/Headers'
 import Footer from '../components/Footer'
+import Banner from '../components/Home/sectionBanner'
 import Head from 'next/head'
 import { wrapper } from "../redux/store"
 
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }) {
               
       </Head>
       <Headers />
+      <Banner/>
       <Component {...pageProps} />
       <Footer />
     </div>
