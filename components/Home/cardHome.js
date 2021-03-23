@@ -1,18 +1,16 @@
 import React from 'react'
-import { Card, Col} from 'react-bootstrap'
+import { Card, Col,} from 'react-bootstrap'
 import Images from 'next/image'
 import Link from 'next/link'
 
 export default function cardHome() {
-    return (<div>
-               
+    return (<>
+              
                     <Card className="item-home-2">
                         <div className="icon-home-2">
-                            
                                 <Images
-                                    src="/assets/images/item-home.png"
+                                    src="/assets/images/p-1.jpg"
                                     alt="ItemHome"
-                                    layout="responsive"
                                     width={360}
                                     height={270} />
                           
@@ -68,8 +66,8 @@ export default function cardHome() {
                         </div>
                     </Card>
                 
-            
-        </div>
+                    
+        </>
     )
 }
 

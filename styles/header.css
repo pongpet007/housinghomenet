@@ -318,6 +318,12 @@ p, span, h1  {
 
 /* Mobile */
 @media (max-width: 960px) {
+  .mb-display-l{
+    padding-left: 5px !important;
+  }
+  .mb-display-r{
+    padding-right: 5px !important;
+  }
   .list-icon-bottom .text-item {
     display: none;
   }
@@ -399,5 +405,6 @@ p, span, h1  {
 .form-serach-more {
   display:block;
  }
+ 
 }
 /* end Mobile */

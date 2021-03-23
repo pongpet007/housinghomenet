@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRouter } from "next/router"
 import { Nav , Col , Tab } from 'react-bootstrap'
+import Link from 'next/link'
 import ItemHome from '../Home/itemHome'
 
 export default function sectionHome() {
@@ -29,7 +30,7 @@ export default function sectionHome() {
                     <Nav.Link eventKey="link-3">ที่อยู่อาศัยเจ้าของขายเอง</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link eventKey="link-4">ดูโครงการแนะนำทั้งหมด</Nav.Link>
+                    <Nav.Link><Link href="produts">ดูโครงการแนะนำทั้งหมด</Link></Nav.Link>
                 </Nav.Item>
             </Nav>
             </Col>
@@ -42,8 +43,12 @@ export default function sectionHome() {
                  <ItemHome />
                </Tab.Pane>
                <Tab.Pane eventKey="link-2">
-               <h1>33333333333333</h1>
+                 <ItemHome />
                </Tab.Pane>
+               <Tab.Pane eventKey="link-3">
+                 <ItemHome />
+               </Tab.Pane>
+               
                </Tab.Content>
            </Col>
         </div>
