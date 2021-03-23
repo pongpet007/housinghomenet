@@ -2,27 +2,29 @@ import React from 'react'
 import { Card, Col,} from 'react-bootstrap'
 import Images from 'next/image'
 import Link from 'next/link'
+import useTranslation from 'next-translate/useTranslation'
 
-export default function cardHome() {
+export default function cardHome({url,name,address,price}) {
+    const { t, lang } = useTranslation('common')
     return (<>
               
                     <Card className="item-home-2">
                         <div className="icon-home-2">
                                 <Images
-                                    src="/assets/images/p-1.jpg"
+                                    src={url}
                                     alt="ItemHome"
                                     width={360}
                                     height={270} />
                           
                             <ul className="list-icon">
                                 <li>
-                                    <p className="pink icon-1">แนะนำ</p>
+                                    <p className="pink icon-1">{t('recommend')}</p>
                                 </li>
                                 <li>
-                                    <p className="green icon-1">ขาย</p>
+                                    <p className="green icon-1">{t('sell')}</p>
                                 </li>
                                 <li>
-                                    <p className="bluesky icon-1">บ้านมือ 2</p>
+                                    <p className="bluesky icon-1">{t('Second-hand')}</p>
                                 </li>
                             </ul>
                             <div className="icon-heart">
@@ -33,9 +35,9 @@ export default function cardHome() {
                                     height={35} />
                             </div>
                             <Card.Body>
-                                <Link href="#"><a target="_blank"><h2>ขายทาวน์โฮม อินดี้ บางนา</h2></a></Link>
-                                <h4> ถนนบางนา-ตราด, บางแก้ว, บางพลี,สมุทรปราการ</h4>
-                                <h2>฿ 2,400,000</h2>
+                                <Link href="#"><a target="_blank"><h2>{name}</h2></a></Link>
+                                <h4>{address}</h4>
+                                <h2>{price}</h2>
                                 <ul className="list-icon-bottom">
                                     <li>
                                         <Images
@@ -43,7 +45,7 @@ export default function cardHome() {
                                             alt="ItemHome"
                                             width={20}
                                             height={20} />
-                                        <h5>3</h5><h5 className="text-item">ห้องนอน</h5>
+                                        <h5>3</h5><h5 className="text-item">{t('bed')}</h5>
                                     </li>
                                     <li>
                                         <Images
@@ -51,7 +53,7 @@ export default function cardHome() {
                                             alt="ItemHome"
                                             width={20}
                                             height={20} />
-                                        <h5>3</h5><h5 className="text-item">ห้องนอน</h5>
+                                        <h5>3</h5><h5 className="text-item">{t('tolet')}</h5>
                                     </li>
                                     <li>
                                         <Images
@@ -59,7 +61,7 @@ export default function cardHome() {
                                             alt="ItemHome"
                                             width={20}
                                             height={20} />
-                                        <h5>3</h5><h5 className="text-item">ห้องนอน</h5>
+                                        <h5>3</h5><h5 className="text-item">{t('Square')}</h5>
                                     </li>
                                 </ul>
                             </Card.Body>

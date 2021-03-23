@@ -68,10 +68,10 @@ const Headers = () => {
                                     </NavDropdown.Item>
                                 </NavDropdown>
                                 <NavDropdown title={t('singin')} id="basic-nav-dropdown" className="mr-3 ml-3">
-                                    <NavDropdown.Item href="#action/3.1"><h5>บัญชีของฉัน</h5></NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3"><h5>ลืมรหัสผ่าน</h5></NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.1"><h5>{t('myaccount')}</h5></NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.3"><h5>{t('forgetpassword')}</h5></NavDropdown.Item>
                                     <NavDropdown.Divider />
-                                    <NavDropdown.Item href="#action/3.4"><h5>ลงทะเบียน</h5></NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3.4"><h5>{t('register')}</h5></NavDropdown.Item>
                                 </NavDropdown>
 
                                 <Nav.Link href="#home" className="favorate count-style mr-2 ml-2">
@@ -96,37 +96,37 @@ const Headers = () => {
                 <div className="custom-container form-header">
                     <Col xs lg="2">
                         <Form.Group controlId="exampleForm.ControlSelect1">
-                            <Form.Label className="font-label">ต้องการ</Form.Label>
+                            <Form.Label className="font-label">{t('Need')}</Form.Label>
                             <Form.Control as="select" className="form-header">
-                                <option>กรุณาเลือก</option>
-                                <option>ซื้อ</option>
-                                <option>ขาย</option>
-                                <option>เช่า</option>
+                                <option>{t('select')}</option>
+                                <option>{t('by')}</option>
+                                <option>{t('sell')}</option>
+                                <option>{t('rental')}</option>
                             </Form.Control>
                         </Form.Group>
                     </Col>
                     <Col>
                         <Form.Group controlId="exampleForm.ControlSelect1">
-                            <Form.Label className="font-label">สินทรัพย์</Form.Label>
+                            <Form.Label className="font-label">{t('property')}</Form.Label>
                             <Form.Control as="select" className="form-header">
-                                <option>กรุณาเลือก</option>
-                                <option>ที่ดิน</option>
-                                <option>คอนโด</option>
-                                <option>ทาวน์โฮม</option>
-                                <option>บ้านเดี่ยว</option>
-                                <option>บ้านแฝด</option>
+                                <option>{t('select')}</option>
+                                <option>{t('land')}</option>
+                                <option>{t('condo')}</option>
+                                <option>{t('townhome')}</option>
+                                <option>{t('Detached-house')}</option>
+                                <option>{t('Semi-detached-house')}</option>
                             </Form.Control>
                         </Form.Group>
                     </Col>
 
                     <Col>
                         <Form.Group>
-                            <Form.Label className="font-label">สินทรัพย์</Form.Label>
-                            <Form.Control placeholder="ทำเล, โครงการ, คอนโด, เขต" className="form-header" />
+                            <Form.Label className="font-label">{t('search')}</Form.Label>
+                            <Form.Control placeholder={t('Location-project-condo-district')}className="form-header" />
                         </Form.Group>
                     </Col>
                     <Col xs lg="1">
-                        <button className="btn-search-subimit">ค้นหา</button>
+                        <button className="btn-search-subimit">{t('search')}</button>
                     </Col>
 
                 </div>
@@ -136,7 +136,7 @@ const Headers = () => {
 
                         <Accordion defaultActiveKey="0">
                             <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                                <h5 className="font-search-more">ค้นหาเพิ่มเติม +</h5>
+                                <h5 className="font-search-more">{t('viewmore')}</h5>
                             </Accordion.Toggle>
                             <container>
 
@@ -144,31 +144,31 @@ const Headers = () => {
                                     <Form.Group className="form-serach-more">
                                         <Col lg={2}>
                                             <Row className="pdr">
-                                                <Form.Label className="font-label">ห้องนอน</Form.Label>
+                                                <Form.Label className="font-label">{t('bed')}</Form.Label>
                                                 <Form.Control as="select" className="form-header">
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
                                                     <option>4</option>
-                                                    <option>ทั้งหมด</option>
+                                                    <option>{t('all')}</option>
                                                 </Form.Control>
                                             </Row>
                                         </Col>
                                         <Col lg={2}>
                                             <Row className="pdr">
-                                                <Form.Label className="font-label">ห้องน้ำ</Form.Label>
+                                                <Form.Label className="font-label">{t('toilet')}</Form.Label>
                                                 <Form.Control as="select" className="form-header">
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
                                                     <option>4</option>
-                                                    <option>ทั้งหมด</option>
+                                                    <option>{t('all')}</option>
                                                 </Form.Control>
                                             </Row>
                                         </Col>
                                         <Col>
                                             <Row className="pdr" >
-                                                <Form.Label className="font-label">จังหวัด</Form.Label>
+                                                <Form.Label className="font-label">{t('Province')}</Form.Label>
                                                 <Form.Control as="select" className="form-header">
                                                     <option>กรุงเทพมหานคร</option>
                                                     <option>กระบี่</option>
@@ -180,9 +180,9 @@ const Headers = () => {
                                         </Col>
                                         <Col>
                                             <Row className="pdr">
-                                                <Form.Label className="font-label">เขต/อำเภอ</Form.Label>
+                                                <Form.Label className="font-label">{t('district')}</Form.Label>
                                                 <Form.Control as="select" className="form-header">
-                                                    <option>กรุณาเลือก</option>
+                                                    <option>{t('select')}</option>
                                                     <option>อ่อนนุช</option>
                                                     <option>บางกะปิ</option>
                                                     <option>สะพานสูง</option>
@@ -193,9 +193,9 @@ const Headers = () => {
 
                                         <Col>
                                             <Row>
-                                                <Form.Label className="font-label">แขวง/ตำบล</Form.Label>
+                                                <Form.Label className="font-label">{t('Sub-district')}</Form.Label>
                                                 <Form.Control as="select" className="form-header">
-                                                    <option>กรุณาเลือก</option>
+                                                    <option>{t('select')}</option>
                                                     <option>อ่อนนุช</option>
                                                     <option>บางกะปิ</option>
                                                     <option>สะพานสูง</option>
@@ -211,35 +211,35 @@ const Headers = () => {
                                     <Form.Group className="form-serach-more" controlId="formBasicRange">
                                         <Col>
                                             <Row className="pdr">
-                                                <Form.Label className="font-label">เฟอร์นิเจอร์</Form.Label>
+                                                <Form.Label className="font-label">{t('furniture')}</Form.Label>
                                                 <Form.Control as="select" className="form-header">
-                                                    <option>มี</option>
-                                                    <option>ไม่มี</option>
+                                                    <option>{t('yes')}</option>
+                                                    <option>{t('no')}</option>
 
                                                 </Form.Control>
                                             </Row>
                                         </Col>
                                         <Col>
                                             <Row className="pdr">
-                                                <Form.Label className="font-label">ประกาศเมื่อ</Form.Label>
+                                                <Form.Label className="font-label">{t('post-date')}</Form.Label>
                                                 <Form.Control as="select" className="form-header">
-                                                    <option>วันนี้</option>
-                                                    <option>สัปดาห์ที่ผ่าน</option>
-                                                    <option>เดือนที่ผ่านมา</option>
-                                                    <option>ปีที่ผ่านมา</option>
-                                                    <option>ทั้งหมด</option>
+                                                    <option>{t('today')}</option>
+                                                    <option>{t('last-week')}</option>
+                                                    <option>{t('last-month')}</option>
+                                                    <option>{t('last-year')}</option>
+                                                    <option>{t('all')}</option>
                                                 </Form.Control>
                                             </Row>
                                         </Col>
 
                                         <Col>
                                             <Row>
-                                                <Form.Label className="font-label">ราคา</Form.Label>
+                                                <Form.Label className="font-label">{t('price')}</Form.Label>
                                                 <Form.Control as="select" className="form-header">
-                                                    <option>1ล้าน-3ล้าน</option>
-                                                    <option>3ล้าน-6ล้าน</option>
-                                                    <option>10ล้าน-20ล้าน</option>
-                                                    <option>ทั้งหมด</option>
+                                                    <option>1,000,000-2,000,000</option>
+                                                    <option>3,000,000-6,000,000</option>
+                                                    <option>10,000,000-20,000,000</option>
+                                                    <option>{t('all')}</option>
                                                 </Form.Control>
                                             </Row>
                                         </Col>

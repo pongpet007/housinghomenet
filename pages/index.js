@@ -1,10 +1,13 @@
 import React from 'react'
 import Banner from '../components/Home/sectionBanner'
 import BannerSponser from '../components/Home/sectionBannerSponser'
+import BannerSponserBottom from '../components/Home/sectionBannerSponseBottom'
+import Service from '../components/Home/sectionService'
 import SectionHome from '../components/Home/sectionHome'
 import { useEffect } from 'react'
 import { useRouter } from "next/router"
 import Head_meta from '../components/Head_meta'
+
 
 
 export default function index() {
@@ -25,6 +28,8 @@ export default function index() {
        <Banner/>
        <BannerSponser />
        <SectionHome />
+       <BannerSponserBottom />
+       <Service />
       
     </div>
 

@@ -1,19 +1,20 @@
 import React from 'react'
 import { OverlayTrigger, Overlay, Tooltip,Popover, Button,Image } from 'react-bootstrap';
-
+import useTranslation from 'next-translate/useTranslation'
   
 export default function iconContact() {
+    const { t, lang } = useTranslation('common')
     const popover = (
         <Popover>
           <Popover.Content>
-              เราพร้อมให้บริการทุกวันจันทร์-ศุกร์ <br></br><b>เวลา 9.00-17.30น</b>
+          {t('monday-friday')}<br></br><b>{t('time-day')}</b>
           </Popover.Content>
         </Popover>
       );
       return (
           <div className="fixed-rigth-bottom">
               <OverlayTrigger 
-                    trigger="hover" 
+                    trigger={["hover", "hover"]}
                     placement="top" 
                     overlay={popover}
                     >

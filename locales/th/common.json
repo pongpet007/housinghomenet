@@ -9,7 +9,56 @@
     "singin":"เข้าสู่ระบบ", 
     "tha":"ไทย",
     "eng":"English",
+    "sellbyowner": "เจ้าของขายเอง",
+    "goodproject":"แหล่งรวมโครงการดีดี คัดสรรแล้วเพื่อคุณ",
+    "housesandland":"บ้านและที่ดินให้เช่า",
+    "Own-land-for-sale":"ที่ดินเจ้าของขายเอง",
+    "Homes-sold-by-the-owner" :"ที่อยู่อาศัยเจ้าของขายเอง",
+    "viewmore":"ดูโครงการแนะนำทั้งหมด",
+    "recommend":"แนะนำ",
+    "sell":"ขาย",
+    "Second-hand":"บ้านมือ 2",
+    "bed":"ห้องนอน",
+    "tolet":"ห้องน้ำ",
+    "Square":"ตารางวา",
+    "monday-friday":"เราพร้อมให้บริการทุกวันจันทร์-ศุกร์",
+    "time-day":"เวลา 9.00-17.30น",
+    "myaccount":"บัญชีของฉัน",
+    "forgetpassword":"ลืมพาสเวิดร์",
+    "regitster":"ลงทะเบียนน",
+    "Need":"ต้องการ",
+    "property":"สินทรัพย์",
+    "search":"ค้นหา",
+    "select":"กรุณาเลือก",
+    "buy":"ขาย",
+    "rental":"เช่า",
+    "condo":"คอนโด",
+    "townhome":"ทาวน์โฮม",
+    "Detached-house":"บ้านเดี่ยว",
+    "Semi-detached-house":"บ้านแฝด",
+    "Location-project-condo-district":"ทำเล ,โครงการ, คอนโด, เขต",
+    "search-more":"ค้นหาเพิ่มเติม",
+    "province":"จังหวัด",
+    "district":"เขต/อำเภอ",
+    "Sub-district":"แขวง/ตำบล",
+    "furniture":"เฟอร์นิเจอร์",
+    "yes":"มี",
+    "no":"ไม่มี",
+    "post-date":"ประกาศเมื่อ",
+    "today":"วันนี้",
+    "last-week":"สัปดาห์ที่ผ่านมา",
+    "last-month":"เดือนที่ผ่านมา",
+    "last-year":"ปีที่ผ่านมา",
+    "all":"ทั้งหมด",
+    "price":"ราคา",
+   
+
+
+    
+
+
 
     "title": "Title ภาษาไทย",    
     "freepost": "ประกาศขายฟรี !!"
-}
+   
+}   

@@ -3,9 +3,11 @@ import { useRouter } from "next/router"
 import { Nav , Col , Tab } from 'react-bootstrap'
 import Link from 'next/link'
 import ItemHome from '../Home/itemHome'
+import useTranslation from 'next-translate/useTranslation'
 
 export default function sectionHome() {
     const router = useRouter()
+    const { t, lang } = useTranslation('common')
     
     return (
         
@@ -13,24 +15,24 @@ export default function sectionHome() {
         <div className="custom-container form-header showhome-mb mt-4">
            
             <Col lg={6}>
-            <h1 className><b>เจ้าของขายเอง</b></h1>
+            <h1><b>{t('sellbyowner')}</b></h1>
             <div className="boder-red-bottom"></div>
-            <h3>แหล่งรวมโครงการดีดี คัดสรรแล้วเพื่อคุณ</h3>
+            <h3>{t('goodproject')}</h3>
             </Col>
 
             <Col lg={6}>    
             <Nav variant="pills">
                 <Nav.Item>
-                    <Nav.Link eventKey="link-1">บ้านและที่ดินให้เช่า</Nav.Link>
+                    <Nav.Link eventKey="link-1">{t('housesandland')}</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link eventKey="link-2">ที่ดินเจ้าของขายเอง</Nav.Link>
+                    <Nav.Link eventKey="link-2">{t('Own-land-for-sale')}</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link eventKey="link-3">ที่อยู่อาศัยเจ้าของขายเอง</Nav.Link>
+                    <Nav.Link eventKey="link-3">{t('Homes-sold-by-the-owner')}</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link><Link href="produts">ดูโครงการแนะนำทั้งหมด</Link></Nav.Link>
+                    <Nav.Link><Link href="produts">{t('viewmore')}</Link></Nav.Link>
                 </Nav.Item>
             </Nav>
             </Col>
