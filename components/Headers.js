@@ -9,11 +9,6 @@ import Link from 'next/link'
 import Button from 'react-bootstrap/Button'
 import Accordion from 'react-bootstrap/Accordion'
 
-
-
-
-
-
 const Headers = () => {
     return (
         <div>
@@ -65,10 +60,10 @@ const Headers = () => {
                                 </NavDropdown.Item>
                             </NavDropdown>
                             <NavDropdown title="เข้าสู่ระบบ" id="basic-nav-dropdown" className="mr-3 ml-3">
-                                <NavDropdown.Item href="#action/3.1"><h5><i className="fas fa-user mr-2 icon-fa-sm"></i>บัญชีของฉัน</h5></NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3"><h5><i className="fas fa-key mr-2 icon-fa-sm"></i>ลืมรหัสผ่าน</h5></NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.1"><h5>บัญชีของฉัน</h5></NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3"><h5>ลืมรหัสผ่าน</h5></NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4"><h5><i className="fas fa-user-circle mr-2 icon-fa-sm"></i>ลงทะเบียน</h5></NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.4"><h5>ลงทะเบียน</h5></NavDropdown.Item>
                             </NavDropdown>
 
                             <Nav.Link href="#home" className="favorate count-style mr-2 ml-2">
@@ -123,7 +118,7 @@ const Headers = () => {
                         </Form.Group>
                     </Col>
                     <Col xs lg="1">
-                    <button className="btn-search-subimit"> <i className="fas fa-search mr-2 icon-fa-sm"></i>ค้นหา</button>
+                    <button className="btn-search-subimit">ค้นหา</button>
                     </Col>
                    
                 </div>
@@ -230,7 +225,7 @@ const Headers = () => {
                                              </Col>
 
                                              <Col>
-                                                <Row className="pdr">
+                                                <Row>
                                                 <Form.Label className="font-label">ราคา</Form.Label>
                                                 <Form.Control as="select" className="form-header">
                                                     <option>1ล้าน-3ล้าน</option>
