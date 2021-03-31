@@ -11,7 +11,9 @@ import Accordion from 'react-bootstrap/Accordion'
 import useTranslation from 'next-translate/useTranslation'
 
 const Headers = () => {
+
     const { t, lang } = useTranslation('common')
+    // console.log(lang);
 
     return (
         <div>
@@ -21,27 +23,28 @@ const Headers = () => {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="Navbar-text mr-auto">
-                                <Link href="#home"><Nav.Link className="border-menu"><h5>{t('home')}</h5></Nav.Link></Link>
-                                <Nav.Link href="#home" className="border-menu"><h5 >{t('newproject')}</h5></Nav.Link>
-                                <Nav.Link href="#home" className="border-menu"><h5>{t('house')}</h5></Nav.Link>
-                                <Nav.Link href="#home" className="border-menu"><h5>{t('land')}</h5></Nav.Link>
-                                <Nav.Link href="#home" className="border-menu"><h5>{t('service')}</h5></Nav.Link>
-                                <Nav.Link href="#home" className="border-menu"><h5>{t('rent')}</h5></Nav.Link>
+                                <Nav.Link className="border-menu"><Link href="/"><h5>{t('home')}</h5></Link></Nav.Link>
+                                <Nav.Link className="border-menu"><Link href="/"><h5 >{t('newproject')}</h5></Link></Nav.Link>
+                                <Nav.Link className="border-menu"><Link href="/"><h5>{t('house')}</h5></Link></Nav.Link>
+                                <Nav.Link className="border-menu"><Link href="/"><h5>{t('land')}</h5></Link></Nav.Link>
+                                <Nav.Link className="border-menu"><Link href="/"><h5>{t('service')}</h5></Link></Nav.Link>
+                                <Nav.Link className="border-menu"><Link href="/"><h5>{t('rent')}</h5></Link></Nav.Link>
                             </Nav>
-                            <Navbar.Brand className=" mr-auto showlogo" href="#home">
-
+                            <Navbar.Brand className=" mr-auto showlogo">
+                                <Link href="/">
                                 <Image
                                     src="/assets/images/logo-04.svg"
                                     alt="logo"
                                     width={118}
                                     height={44}
                                 />
+                                </Link>
                             </Navbar.Brand>
 
                             <Nav className="font-26">
                                 <NavDropdown title={t('changelanguage')} id="basic-nav-dropdown" className="mr-3 ml-3">
                                     <NavDropdown.Item >
-                                        <Link  href="/" locale="th" key={lang}>
+                                        <Link href="/" locale="th" key={lang}>
                                             <h5>
                                                 <Image
                                                     src="/assets/images/th.svg"
@@ -54,16 +57,16 @@ const Headers = () => {
                                         </Link>
                                     </NavDropdown.Item>
                                     <NavDropdown.Item >
-                                        <Link  href="/" locale="en" key={lang}>
-                                        <h5>
-                                            <Image
-                                                src="/assets/images/en.svg"
-                                                alt={t('tha')}
-                                                width={40}
-                                                height={17}
-                                            />
-                                            {t('eng')}
-                                        </h5>
+                                        <Link href="/" locale="en" key={lang}>
+                                            <h5>
+                                                <Image
+                                                    src="/assets/images/en.svg"
+                                                    alt={t('tha')}
+                                                    width={40}
+                                                    height={17}
+                                                />
+                                                {t('eng')}
+                                            </h5>
                                         </Link>
                                     </NavDropdown.Item>
                                 </NavDropdown>
@@ -122,7 +125,7 @@ const Headers = () => {
                     <Col>
                         <Form.Group>
                             <Form.Label className="font-label">{t('search')}</Form.Label>
-                            <Form.Control placeholder={t('Location-project-condo-district')}className="form-header" />
+                            <Form.Control placeholder={t('Location-project-condo-district')} className="form-header" />
                         </Form.Group>
                     </Col>
                     <Col xs lg="1">
