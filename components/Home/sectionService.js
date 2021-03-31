@@ -3,6 +3,8 @@ import { Col, Row } from 'react-bootstrap'
 import useTranslation from 'next-translate/useTranslation'
 import Images from 'next/image'
 import CardService from '../Home/cardService'
+import CardServicePartner from '../Home/cardServicePartner'
+
 
 
 export default function sectionService() {
@@ -19,21 +21,23 @@ export default function sectionService() {
                     </Col>
                 </div>
                 <div className="section-service">
-                    <Col xs={6} lg={4}>
+                    <Row>
+                    <Col xs={6} sm={6} lg={4}>
                             <CardService/>
                             <CardService/>
                             <CardService/>
                             <CardService/>
                     </Col>
-                    <Col xs={6} lg={4}>
+                    <Col xs={6} sm={6} lg={4}>
                                 < CardService/>
                             <CardService/>
                             <CardService/>
                             <CardService/>
                     </Col>
-                    <Col xs={12} lg={4}>
-                        sss
+                    <Col sm={12} lg={4}>
+                        <CardServicePartner/>
                     </Col>
+                    </Row>
                 </div>
 
             </div>

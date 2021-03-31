@@ -324,11 +324,155 @@ p, span, h1  {
   background-size: cover;
 }
 .section-service{
-  display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.bg-pink{
+  background-color:#FBF2F4 ;
+  padding: 30px;
+}
+.bg-pink h3{
+  color:#FE4B6D ;
+  font-weight: bold;
+  letter-spacing: 0.5px;
   
+}
+.bg-blue{
+  background-color:#dbeffa ;
+  padding: 30px;
+}
+.bg-blue h3{
+  color:#009cda ;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  
+}
+.text-partner{
+  overflow: hidden;
+  height: 150px;
+}
+.banner-partner{
+  display: inline;
+  list-style: none;
+}
+.banner-partner li{
+  display: inline;
+}
+.bg-footer{
+  background-image: url(/assets/images/footer-bg.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+.text-footer{
+  list-style: none;
+  padding-left: 0px;
+  text-align: center;
+}
+.text-footer li{
+  display: inline;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.text-footer h3{
+  display: inline;
+  
+}
+.text-footer a{
+  color: white;
+}
+.text-footer a:hover{
+  color: rgb(255, 1, 14);
+  text-decoration: unset;
+  transition: 0.5s;
+}
+
+.text-footer-2{
+  list-style: none;
+  padding-left: 0px;
+  text-align: center;
+}
+.text-footer-2 li{
+  display: inline;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.text-footer-2 h4{
+  display: inline;
+  
+}
+.text-footer-2 a{
+  color: white;
+}
+.text-footer-2 a:hover{
+  color: rgb(255, 1, 14);
+  text-decoration: unset;
+  transition: 0.5s;
+}
+.border-r-footer{
+  border-right: solid 1px white;
+}
+.text-footer-h1 {
+  font-size: 4rem ;
+  letter-spacing: 0.5px;
+  font-style: italic;
+}
+.text-service a{
+  color:black;
+}
+.text-service a:hover{
+  text-decoration: none;
+  color: rgb(255, 1, 14);
+  transition: 0.5s;
 }
 /* Mobile */
 @media (max-width: 960px) {
+  .text-footer-h1 {
+    font-size: 2rem ;
+    
+  }
+  .border-r-footer{
+    border-right: none;
+  }
+  
+  .text-footer{
+    list-style: none;
+    padding-left: 0px;
+    
+  }
+  .text-footer h4{
+    display: block;
+    
+  }
+
+  .text-footer li{
+    border-bottom: dotted 2px rgba(255, 255, 255, 0.226);
+    display: block;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+  }
+
+  .text-footer-2{
+    list-style: none;
+    padding-left: 0px;
+    line-height: 0px;
+    text-align: center;
+  }
+  .text-footer-2 h4{
+    display: block;
+    
+  }
+
+  .text-footer-2 li{
+    
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+  }
+
   .mb-display-l{
     padding-left: 5px !important;
   }

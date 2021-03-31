@@ -7,6 +7,7 @@ import SectionHome from '../components/Home/sectionHome'
 import { useEffect } from 'react'
 import { useRouter } from "next/router"
 import Head_meta from '../components/Head_meta'
+import SectionPartner from '../components/Home/sectionPartner'
 
 
 
@@ -30,6 +31,7 @@ export default function index() {
        <SectionHome />
        <BannerSponserBottom />
        <Service />
+       <SectionPartner />
       
     </div>
 

@@ -39,6 +39,10 @@
     "Detached-house":"Detached House",
     "Semi-detached-house":"Semi-detached House",
     "Location-project-condo-district":"Location, project, condo, district",
+    "InterestingAssets":"Interesting Assets",
+    "RentalAnnouncement":"Rental Announcement",
+    "news":"News",
+    "FindAttractive":"Find attractive assets Through a reliable web ",
     
     "search-more":"Search More",
     "province":"Province",
@@ -55,6 +59,9 @@
     "all":"All",
     "price":"Price",
     "homeservice":"Home Services",
+    "Thaiproperty":"Get to know Thai property developers",
+    "tel":"Tel.",
+    "email":"Email : ",
 
     "title":"Title English",    
     "freepost":"Free post"
