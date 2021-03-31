@@ -25,7 +25,7 @@
     "time-day":"เวลา 9.00-17.30น",
     "myaccount":"บัญชีของฉัน",
     "forgetpassword":"ลืมพาสเวิดร์",
-    "regitster":"ลงทะเบียนน",
+    "register":"ลงทะเบียนน",
     "Need":"ต้องการ",
     "property":"สินทรัพย์",
     "search":"ค้นหา",
@@ -53,13 +53,11 @@
     "price":"ราคา",
     "homeservice":"บริการเกี่ยวกับบ้าน",
    
-
-
-    
-
-
-
     "title": "Title ภาษาไทย",    
-    "freepost": "ประกาศขายฟรี !!"
+    "freepost": "ประกาศขายฟรี !!",
+
+    "by":"by",
+    "toilet":"toilet",
+    "Province":"Province"
    
 }   
