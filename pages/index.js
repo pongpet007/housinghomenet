@@ -39,38 +39,38 @@ function index(props) {
   )
 }
 
-export async function getServerSideProps() {
-  let params = {
-    asset_type_id: "0",
-    sale_type_id: "1",
-    keyword: "",
-    is_new: 0,
-    limit: 20,
-    page: 1
-  }
-  let queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
-  const res = await fetch(`http://www.myhousinghome.net/api/asset/getlistbytype?`+ queryString)
-  let data = await res.json()
+// export async function getServerSideProps() {
+//   let params = {
+//     asset_type_id: "0",
+//     sale_type_id: "1",
+//     keyword: "",
+//     is_new: 0,
+//     limit: 20,
+//     page: 1
+//   }
+//   let queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
+//   const res = await fetch(`http://www.myhousinghome.net/api/asset/getlistbytype?`+ queryString)
+//   let data = await res.json()
 
-  params = {
-    asset_type_id: "4",
-    sale_type_id: "0",
-    keyword: "",
-    is_new: 0,
-    limit: 20,
-    page: 1
-  }
-  queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
-  const res2 = await fetch(`http://www.myhousinghome.net/api/asset/getlistbytype?`+ queryString)
-  const data2 = await res2.json()
+//   params = {
+//     asset_type_id: "4",
+//     sale_type_id: "0",
+//     keyword: "",
+//     is_new: 0,
+//     limit: 20,
+//     page: 1
+//   }
+//   queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
+//   const res2 = await fetch(`http://www.myhousinghome.net/api/asset/getlistbytype?`+ queryString)
+//   const data2 = await res2.json()
 
-  // console.log(data2)
-  // const res2 = await fetch(`http://www.myhousinghome.net/api/asset/getOne?asset_id=2`)
+//   // console.log(data2)
+//   // const res2 = await fetch(`http://www.myhousinghome.net/api/asset/getOne?asset_id=2`)
 
-  // const data2 = await res2.json()
-  // console.log(data2)
-  return { props: { data,data2} }
-}
+//   // const data2 = await res2.json()
+//   // console.log(data2)
+//   return { props: { data,data2} }
+// }
 
 
 export default index
