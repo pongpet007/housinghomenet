@@ -12,6 +12,7 @@ import SectionPartner from '../components/Home/sectionPartner'
 
 
 function index(props) {
+    
   // console.log(props)
   const router = useRouter()
 
@@ -40,6 +41,7 @@ function index(props) {
 }
 
 export async function getServerSideProps() {
+  
   let params = {
     asset_type_id: "0",
     sale_type_id: "1",
@@ -49,7 +51,7 @@ export async function getServerSideProps() {
     page: 1
   }
   let queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
-  const res = await fetch(`http://www.myhousinghome.net/api/asset/getlistbytype?`+ queryString)
+  const res = await fetch(process.env.API_PREFIX + `asset/getlistbytype?`+ queryString)
   let data = await res.json()
 
   params = {
@@ -61,7 +63,7 @@ export async function getServerSideProps() {
     page: 1
   }
   queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
-  const res2 = await fetch(`http://www.myhousinghome.net/api/asset/getlistbytype?`+ queryString)
+  const res2 = await fetch(process.env.API_PREFIX + `asset/getlistbytype?`+ queryString)
   const data2 = await res2.json()
 
   // console.log(data2)
