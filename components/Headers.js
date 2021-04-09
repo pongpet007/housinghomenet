@@ -24,12 +24,12 @@ const Headers = () => {
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="Navbar-text mr-auto">
-                                    <Nav.Link className="border-menu"><Link href="/"><h5>{t('home')}</h5></Link></Nav.Link>
-                                    <Nav.Link className="border-menu"><Link href="/asset?is_new=1"><h5 >{t('newproject')}</h5></Link></Nav.Link>
-                                    <Nav.Link className="border-menu"><Link href="/"><h5>{t('house')}</h5></Link></Nav.Link>
-                                    <Nav.Link className="border-menu"><Link href="/"><h5>{t('land')}</h5></Link></Nav.Link>
-                                    <Nav.Link className="border-menu"><Link href="/"><h5>{t('service')}</h5></Link></Nav.Link>
-                                    <Nav.Link className="border-menu"><Link href="/"><h5>{t('rent')}</h5></Link></Nav.Link>
+                                    <Nav.Link href="/" className="border-menu"><h5>{t('home')}</h5></Nav.Link>
+                                    <Nav.Link href="/asset?is_new=1" className="border-menu"><h5 >{t('newproject')}</h5></Nav.Link>
+                                    <Nav.Link href="/" className="border-menu"><h5>{t('house')}</h5></Nav.Link>
+                                    <Nav.Link href="/" className="border-menu"><h5>{t('land')}</h5></Nav.Link>
+                                    <Nav.Link href="/" className="border-menu"><h5>{t('service')}</h5></Nav.Link>
+                                    <Nav.Link href="/" className="border-menu"><h5>{t('rent')}</h5></Nav.Link>
                                 </Nav>
                                 <Navbar.Brand className=" mr-auto showlogo">
                                     <Link href="/">

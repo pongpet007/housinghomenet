@@ -51,7 +51,7 @@ export async function getServerSideProps() {
     page: 1
   }
   let queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
-  const res = await fetch(process.env.API_PREFIX + `asset/getlistbytype?`+ queryString)
+  const res = await fetch(process.env.NEXT_PUBLIC_API_PREFIX + `asset/getlistbytype?`+ queryString)
   let data = await res.json()
 
   params = {
@@ -63,7 +63,7 @@ export async function getServerSideProps() {
     page: 1
   }
   queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
-  const res2 = await fetch(process.env.API_PREFIX + `asset/getlistbytype?`+ queryString)
+  const res2 = await fetch(process.env.NEXT_PUBLIC_API_PREFIX + `asset/getlistbytype?`+ queryString)
   const data2 = await res2.json()
 
   // console.log(data2)

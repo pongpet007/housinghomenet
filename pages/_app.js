@@ -1,5 +1,6 @@
 import '../styles/header.css'
 import '../styles/globals.css'
+
 import React from "react"
 import Headers from '../components/Headers'
 import Footer from '../components/Footer'
