@@ -35,7 +35,7 @@ export default function cardHome({asset_id,url,name,address,price}) {
                                     height={35} />
                             </div>
                             <Card.Body>
-                                <Link href={`/asset/${asset_id}`}><a ><h2>{name}</h2></a></Link>
+                                <Link href={`/${lang}/asset/${asset_id}`}><a target="_blank" ><h2>{name}</h2></a></Link>
                                 <h4>{address}</h4>
                                 <h2>{price}</h2>
                                 <ul className="list-icon-bottom">

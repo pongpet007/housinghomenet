@@ -2,7 +2,14 @@ import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 import Images from 'next/image'
 
+// import useSWR from 'swr'
+
 function cardServicePartner() {
+
+//   const fetcher = (...args) => fetch(...args).then(res => res.json())
+//   const { data, error } = useSWR('https://www.housinghome.net/api/ImageSet/getList?banner_type_id=1', fetcher)
+//   console.log(data)
+
     return (
         <>
             <div className="bg-pink mb-4">

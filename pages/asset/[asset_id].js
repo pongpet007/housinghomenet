@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 // import SimpleReactLightbox from 'simple-react-lightbox'
 // import { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col, Tab, Nav } from 'react-bootstrap'
-import FbImageLibrary from 'react-fb-image-grid'
+// import FbImageLibrary from 'react-fb-image-grid'
 import Head_meta from "../../components/Head_meta"
 
 // import 'react-image-lightbox/style.css'
@@ -17,9 +17,13 @@ import 'react-owl-carousel2/lib/styles.css';
 import Head from 'next/head'
 
 
-const asset_item = ({ data: {
-    asset
-} }) => {
+const asset_item = (
+    { data:
+        {
+            asset
+        }
+    }
+) => {
     const router = useRouter()
     const { asset_id } = router.query
 
@@ -46,20 +50,20 @@ const asset_item = ({ data: {
         nav: false,
         rewind: true,
         autoplay: true,
-        navText:['<','>'],
-        responsive:{
-            0:{
-                items:1,
-                nav:true
+        navText: ['<', '>'],
+        responsive: {
+            0: {
+                items: 1,
+                nav: true
             },
-            600:{
-                items:1,
-                nav:false
+            600: {
+                items: 1,
+                nav: false
             },
-            1000:{
-                items:3,
-                nav:true,
-                loop:false
+            1000: {
+                items: 3,
+                nav: true,
+                loop: false
             }
         }
     };
@@ -69,25 +73,23 @@ const asset_item = ({ data: {
         <>
 
             <Head_meta
-                title='xxx'
-                keyword='yyy'
-                description="zzz"
+                title='สินค้าอุตสาหกรรม ค้นหาสินค้าอุตสาหกรรมออนไลน์ เว็บไซต์รวมรายชื่อผู้ผลิต จำหน่าย ให้บริการ'
+                keyword='เว็บไซต์รวมสินค้าอุตสาหกรรมออนไลน์ ค้นหารายชื่อผู้ประกอบการภาคอุตสาหกรรม ตลาดสินค้าอุตสาหกรรม โดยบริษัท แบรนด์เด็กซ์ ไดเร็กทอรี่ จำกัด ผู้ผลิตสื่ออุตสาหกรรมคุณภาพ'
+                description="สินค้าอุตสาหกรรม,สินค้าอุตสาหกรรมออนไลน์,เว็บอุตสาหกรรม,ตลาดอุตสาหกรรม,ตลาดกลางอุตสาหกรรม, สื่อสินค้าอุตสาหกรรม,ตลาดกลางสินค้าอุตสาหกรรม,thailand industry,รายชื่อบริษัทอุตสาหกรรม,สินค้าอุตสาหกรรมคืออะไร,สินค้าอุตสาหกรรมมีกี่ประเภท,ตัวอย่างสินค้าอุตสาหกรรม"
             />
-            <Head>
-                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-            </Head>
+
             {/*             
             <FbImageLibrary
                 images={pictures}
                 // hideOverlay={true}
                 renderOverlay={() => <b style={{ fontSize: '40px' }}>HOUSINGHOME.NET</b>}
             /> */}
-            
+
             <OwlCarousel options={OWLoptions} >
                 {pictures.map(
                     (picture, index) => {
                         return (
-                            <div key={index} style={{height:'350px',overflow:'hidden'}}><img src={picture} alt="xxx" /></div>
+                            <div key={index} style={{ height: '350px', overflow: 'hidden' }}><img src={picture} alt="xxx" /></div>
                         )
                     }
                 )}

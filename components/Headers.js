@@ -6,8 +6,8 @@ import { NavDropdown } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import Image from 'next/image'
 import Link from 'next/link'
-import Button from 'react-bootstrap/Button'
-import Accordion from 'react-bootstrap/Accordion'
+// import Button from 'react-bootstrap/Button'
+// import Accordion from 'react-bootstrap/Accordion'
 import useTranslation from 'next-translate/useTranslation'
 
 const Headers = () => {
@@ -24,21 +24,23 @@ const Headers = () => {
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="Navbar-text mr-auto">
-                                    <Nav.Link href="/" className="border-menu"><h5>{t('home')}</h5></Nav.Link>
-                                    <Nav.Link href="/asset?is_new=1" className="border-menu"><h5 >{t('newproject')}</h5></Nav.Link>
-                                    <Nav.Link href="/" className="border-menu"><h5>{t('house')}</h5></Nav.Link>
-                                    <Nav.Link href="/" className="border-menu"><h5>{t('land')}</h5></Nav.Link>
-                                    <Nav.Link href="/" className="border-menu"><h5>{t('service')}</h5></Nav.Link>
-                                    <Nav.Link href="/" className="border-menu"><h5>{t('rent')}</h5></Nav.Link>
+                                    <Link href={`/${lang}`}><Nav.Link  href={`/${lang}`} className="border-menu"><h5>{t('home')}</h5></Nav.Link></Link>
+                                    <Link href={`/${lang}/asset?is_new=1`}><Nav.Link href={`/${lang}/asset?is_new=1`} className="border-menu"><h5 >{t('newproject')}</h5></Nav.Link></Link>
+                                    <Link href={`/${lang}/asset?is_new=1`}><Nav.Link href={`/${lang}/asset?is_new=1`} className="border-menu"><h5>{t('house')}</h5></Nav.Link></Link>
+                                    <Link href={`/${lang}/asset?is_new=1`}><Nav.Link href={`/${lang}/asset?is_new=1`} className="border-menu"><h5>{t('land')}</h5></Nav.Link></Link>
+                                    <Link href={`/${lang}/asset?is_new=1`}><Nav.Link href={`/${lang}/asset?is_new=1`} className="border-menu"><h5>{t('service')}</h5></Nav.Link></Link>
+                                    <Link href={`/${lang}/asset?is_new=1`}><Nav.Link href={`/${lang}/asset?is_new=1`} className="border-menu"><h5>{t('rent')}</h5></Nav.Link></Link>
                                 </Nav>
                                 <Navbar.Brand className=" mr-auto showlogo">
-                                    <Link href="/">
-                                        <Image
-                                            src="/assets/images/logo-04.svg"
-                                            alt="logo"
-                                            width={118}
-                                            height={44}
-                                        />
+                                    <Link href={`/${lang}`}>
+                                        <a>
+                                            <Image
+                                                src="/assets/images/logo-04.svg"
+                                                alt="logo"
+                                                width={118}
+                                                height={44}
+                                            />
+                                        </a>
                                     </Link>
                                 </Navbar.Brand>
 
@@ -102,7 +104,7 @@ const Headers = () => {
                             <Form.Group controlId="exampleForm.ControlSelect1">
                                 <Form.Label className="font-label">{t('Need')}</Form.Label>
                                 <Form.Control as="select" name="sale_type" className="form-header">
-                                    <option>{t('select')}</option>                                    
+                                    <option>{t('select')}</option>
                                     <option>{t('sell')}</option>
                                     <option>{t('rental')}</option>
                                 </Form.Control>
