@@ -1,7 +1,3 @@
-@font-face {
-	font-family: "myfont";
- 	src: url("../font/PSL029pro.ttf");
-}
 body {
   font-family: "myfont",sans-serif !important;
 }
