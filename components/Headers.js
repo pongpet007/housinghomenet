@@ -26,8 +26,8 @@ const Headers = () => {
                                 <Nav className="Navbar-text mr-auto">
                                     <Link href={`/${lang}`}><Nav.Link  href={`/${lang}`} className="border-menu"><h5>{t('home')}</h5></Nav.Link></Link>
                                     <Link href={`/${lang}/asset?is_new=1`}><Nav.Link href={`/${lang}/asset?is_new=1`} className="border-menu"><h5 >{t('newproject')}</h5></Nav.Link></Link>
-                                    <Link href={`/${lang}/asset?is_new=1`}><Nav.Link href={`/${lang}/asset?is_new=1`} className="border-menu"><h5>{t('house')}</h5></Nav.Link></Link>
-                                    <Link href={`/${lang}/asset?is_new=1`}><Nav.Link href={`/${lang}/asset?is_new=1`} className="border-menu"><h5>{t('land')}</h5></Nav.Link></Link>
+                                    <Link href={`/${lang}/asset?asset_type_id=1`}><Nav.Link href={`/${lang}/asset?asset_type_id=1`} className="border-menu"><h5>{t('house')}</h5></Nav.Link></Link>
+                                    <Link href={`/${lang}/asset?asset_type_id=10`}><Nav.Link href={`/${lang}/asset?asset_type_id=10`} className="border-menu"><h5>{t('land')}</h5></Nav.Link></Link>
                                     <Link href={`/${lang}/asset?is_new=1`}><Nav.Link href={`/${lang}/asset?is_new=1`} className="border-menu"><h5>{t('service')}</h5></Nav.Link></Link>
                                     <Link href={`/${lang}/asset?is_new=1`}><Nav.Link href={`/${lang}/asset?is_new=1`} className="border-menu"><h5>{t('rent')}</h5></Nav.Link></Link>
                                 </Nav>
