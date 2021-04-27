@@ -15,13 +15,13 @@ function sectionHome() {
         <Tab.Container id="bottom-tab-example" defaultActiveKey="link-1">
             <div className="custom-container form-header showhome-mb mt-4">
 
-                <Col lg={6}>
+                <Col lg={4}>
                     <h4><b>{t('sellbyowner')}</b></h4>
                     <div className="boder-red-bottom"></div>
                     <h5>{t('goodproject')}</h5>
                 </Col>
 
-                <Col lg={6}>
+                <Col lg={8} className="float-end">
                     <Nav variant="pills">
                         <Nav.Item>
                             <Nav.Link eventKey="link-1">{t('housesandland')}</Nav.Link>

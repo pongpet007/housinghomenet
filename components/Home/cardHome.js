@@ -35,10 +35,10 @@ export default function cardHome({asset_id,url,name,address,price}) {
                                     height={35} />
                             </div>
                             <Card.Body>
-                                <Link href={`/${lang}/asset/${asset_id}`}><a target="_blank" ><h2>{name}</h2></a></Link>
-                                <p>{address}</p>
-                                <h3><b>{price}</b></h3>
-                                <ul className="list-icon-bottom">
+                                <Link href={`/${lang}/asset/${asset_id}`}><a target="_blank" ><h5 className="title-home">{name}</h5></a></Link>
+                                <p className="home-address">{address}</p>
+                                <h4><b>{price}</b></h4>
+                                <ul className="list-icon-bottom quantity-home">
                                     <li>
                                         <Images
                                             src="/assets/images/icon-05.svg"

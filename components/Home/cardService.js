@@ -25,7 +25,7 @@ function cardService() {
                 </Col>
                 <Col lg={6}>
                     <h5 data-aos="fade-left" className="text-service"><Link href="#">บริการต่อเติม</Link></h5>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euisLorem</p>
+                    <p className="detail-service">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euisLorem</p>
                 </Col>
             </Row>
         </div>

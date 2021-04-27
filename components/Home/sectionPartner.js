@@ -14,7 +14,7 @@ function sectionPartner() {
                 <div className="mb-5">
                         <div className="custom-container">
                                 <Col lg={6} className="mb-3">
-                                        <h3><b>{t('Thaiproperty')}</b></h3>
+                                        <h4><b>{t('Thaiproperty')}</b></h4>
                                         <div className="boder-red-bottom"></div>
                                         <h5>{t('goodproject')}</h5>
                                 </Col>

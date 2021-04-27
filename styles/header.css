@@ -3,9 +3,18 @@
 body {
   font-family: "Kanit",sans-serif !important;  
 }
-
+.home-address{
+  font-size: 16px;
+}
+.title-home{
+  font-size: 20px;
+  font-weight: bold;
+}
 .bg-white-2{
   background-color: #fff;
+}
+.detail-service{
+  font-size: 16px;
 }
 .fixed-top {
   top: 0;
@@ -346,6 +355,7 @@ body {
 .text-partner{
   overflow: hidden;
   height: 150px;
+  font-size: 16px;
 }
 .banner-partner{
   display: inline;
@@ -374,8 +384,10 @@ body {
 }
 .text-footer h5{
   display: inline;
+  font-size: 20px;
   
 }
+
 .text-footer a{
   color: white;
 }
@@ -411,7 +423,7 @@ body {
   border-right: solid 1px white;
 }
 .text-footer-h1 {
-  font-size: 2.5rem ;
+  font-size: 2.0rem ;
   font-style: italic;
 }
 .text-service a{
@@ -422,8 +434,14 @@ body {
   color: rgb(255, 1, 14);
   transition: 0.5s;
 }
+.quantity-home{
+  font-size: 16px;
+}
 /* Mobile */
 @media (max-width: 960px) {
+  .title-home{
+    font-size: 18px;
+  }
   .text-footer-h1 {
     font-size: 2rem ;
     
