@@ -1,10 +1,9 @@
-@font-face {
-	font-family: "myfont";
- 	src: url("../font/PSL029pro.ttf");
-}
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
-  font-family: "myfont",sans-serif !important;
+  font-family: "Kanit",sans-serif !important;  
 }
+
 .bg-white-2{
   background-color: #fff;
 }
@@ -18,7 +17,7 @@ body {
 
 .form-control.form-header{
   border-radius: 0rem;
-  font-size: 24px;
+  font-size: 16px;
 }
 .custom-container{
   max-width: 1560px;
@@ -43,15 +42,13 @@ body {
   background-color: red;
   
 }
-p, span, h1  {
-  font-family: "myfont",sans-serif;
-}
+
 .Navbar-text h5{
   color: black;
-  letter-spacing: 0.5px;
+  
   padding-left: 10px;
   padding-right: 10px;  
-  font-size: 26px;
+  font-size:16px;
 }
 .navbar{
   padding: .5rem 0rem !important;
@@ -77,10 +74,9 @@ p, span, h1  {
 }
 .font-26 {
   color: black;
-  letter-spacing: 0.5px;
   padding-left: 10px;
   padding-right: 10px;  
-  font-size: 26px;
+  font-size:16px;
 }
 .font-search-more{
   color: #fff;
@@ -91,16 +87,16 @@ p, span, h1  {
 }
 
 .font-label{
-  font-size: 24px;
+  font-size: 16px;
   color: #fff;
-  letter-spacing: 0.5px;
+  
 
 }
 .dropdown-toggle::after {
  vertical-align: .1em !important;
 }
 .post {
-  font-size: 28px;
+  font-size: 16px;
   color: #fff;
   background-color: rgb(235, 15, 22);
   border-radius:4px;
@@ -120,7 +116,7 @@ p, span, h1  {
     background-color: #fe0000;
     border-radius: 100%;
     display: inline-block;
-    font-size: 20px;
+    font-size: 12px;
     height: 23px;
     position: absolute;
     line-height: 23px;
@@ -154,10 +150,10 @@ p, span, h1  {
   border: none;
   border-radius: 4px;
   color: #fe0000;
-  font-size: 26px;
+  font-size: 16px;
   width: 100%;
   letter-spacing: 0.5px;
-  margin-top: 42px;
+  margin-top: 33px;
   padding: 0.4rem 0.5rem;
 }
 
@@ -222,8 +218,7 @@ p, span, h1  {
   background-color:#F8F8F8;
   margin-left: 5px;
   margin-right: 5px;
-  font-size: 24px;
-  letter-spacing: 0.5px;
+  font-size: 16px;
   margin-bottom: 10px;
 }
 .nav-pills :hover a{
@@ -258,12 +253,12 @@ p, span, h1  {
   padding-left: 0px;
 }
 .icon-home-2 .icon-1{
-  padding: 0px 15px;
-  border-radius: 6px;
-  bottom: 0px;
-  font-size: 1.5rem;
-  height: 35px;
-  margin-right: 15px;
+    padding: 0px 7px;
+    border-radius: 2px;
+    bottom: 0px;
+    font-size: 15px;
+    height: 22px;
+    margin-right: 10px;
 }
 .icon-heart{
     position: absolute;
@@ -310,7 +305,7 @@ p, span, h1  {
   display: inline;
   
 }
-.list-icon-bottom h5{
+.list-icon-bottom p{
   display: inline;
   padding-left: 5px;
   padding-right: 5px;
@@ -332,7 +327,7 @@ p, span, h1  {
   background-color:#FBF2F4 ;
   padding: 30px;
 }
-.bg-pink h3{
+.bg-pink h4{
   color:#FE4B6D ;
   font-weight: bold;
   letter-spacing: 0.5px;
@@ -342,7 +337,7 @@ p, span, h1  {
   background-color:#dbeffa ;
   padding: 30px;
 }
-.bg-blue h3{
+.bg-blue h4{
   color:#009cda ;
   font-weight: bold;
   letter-spacing: 0.5px;
@@ -377,7 +372,7 @@ p, span, h1  {
   padding-left: 2rem;
   padding-right: 2rem;
 }
-.text-footer h3{
+.text-footer h5{
   display: inline;
   
 }
@@ -416,8 +411,7 @@ p, span, h1  {
   border-right: solid 1px white;
 }
 .text-footer-h1 {
-  font-size: 4rem ;
-  letter-spacing: 0.5px;
+  font-size: 2.5rem ;
   font-style: italic;
 }
 .text-service a{
@@ -488,6 +482,9 @@ p, span, h1  {
  
     opacity: 1;
 }
+ .card-body h3{
+   font-size: 16px;
+ }
   .icon-home-2 .icon-1{
    display: none;
   }
@@ -501,7 +498,7 @@ p, span, h1  {
     font-size: 1.2rem ;
   }
   .nav-pills a{
-    font-size: 20px;
+    font-size: 14px;
   }
   .showhome-mb h1{
     font-size: 2rem;
@@ -529,10 +526,10 @@ p, span, h1  {
 }
  .Navbar-text h5{
   color: black;
-  letter-spacing: 0.5px;
+  
   padding-left: 0px;
   padding-right: 10px;  
-  font-size: 22px;
+  font-size:16px;
   line-height: 0px;
   padding-bottom: 20px;
   border-bottom: solid 1px #eee;
@@ -542,7 +539,7 @@ p, span, h1  {
   letter-spacing: 0.5px;
   padding-left: 10px;
   padding-right: 10px;  
-  font-size: 22px;
+  font-size: 16px;
 }
 .navbar-collapse{
   margin-top: 30px;

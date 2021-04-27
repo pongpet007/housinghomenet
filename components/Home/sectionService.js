@@ -15,9 +15,9 @@ export default function sectionService() {
             <div className="custom-container">
                 <div className="mb-4">
                     <Col lg={12}>
-                        <h1 style={{ fontWeight: 'bold', letterSpacing: '0.5px' }}>
+                        <h4 style={{ fontWeight: 'bold', }}>
                             {t('homeservice')}
-                        </h1>
+                        </h4>
                     </Col>
                 </div>
                 <div className="section-service">

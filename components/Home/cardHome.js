@@ -35,9 +35,9 @@ export default function cardHome({url,name,address,price}) {
                                     height={35} />
                             </div>
                             <Card.Body>
-                                <Link href="#"><a target="_blank"><h2>{name}</h2></a></Link>
-                                <h4>{address}</h4>
-                                <h2>{price}</h2>
+                                <Link href="#"><a target="_blank"><h4>{name}</h4></a></Link>
+                                <p>{address}</p>
+                                <h3><b>{price}</b></h3>
                                 <ul className="list-icon-bottom">
                                     <li>
                                         <Images
@@ -45,7 +45,7 @@ export default function cardHome({url,name,address,price}) {
                                             alt="ItemHome"
                                             width={20}
                                             height={20} />
-                                        <h5>3</h5><h5 className="text-item">{t('bed')}</h5>
+                                        <p>3</p><p className="text-item">{t('bed')}</p>
                                     </li>
                                     <li>
                                         <Images
@@ -53,7 +53,7 @@ export default function cardHome({url,name,address,price}) {
                                             alt="ItemHome"
                                             width={20}
                                             height={20} />
-                                        <h5>3</h5><h5 className="text-item">{t('tolet')}</h5>
+                                        <p>3</p><p className="text-item">{t('tolet')}</p>
                                     </li>
                                     <li>
                                         <Images
@@ -61,7 +61,7 @@ export default function cardHome({url,name,address,price}) {
                                             alt="ItemHome"
                                             width={20}
                                             height={20} />
-                                        <h5>3</h5><h5 className="text-item">{t('Square')}</h5>
+                                        <p>3</p><p className="text-item">{t('Square')}</p>
                                     </li>
                                 </ul>
                             </Card.Body>

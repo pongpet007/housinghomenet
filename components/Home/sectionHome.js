@@ -16,9 +16,9 @@ function sectionHome() {
             <div className="custom-container form-header showhome-mb mt-4">
 
                 <Col lg={6}>
-                    <h1><b>{t('sellbyowner')}</b></h1>
+                    <h4><b>{t('sellbyowner')}</b></h4>
                     <div className="boder-red-bottom"></div>
-                    <h3>{t('goodproject')}</h3>
+                    <h5>{t('goodproject')}</h5>
                 </Col>
 
                 <Col lg={6}>

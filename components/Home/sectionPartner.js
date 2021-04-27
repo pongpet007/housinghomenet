@@ -8,11 +8,11 @@ function sectionPartner() {
     const { t, lang } = useTranslation('common')
     return (
         <div className ="mb-5">
-            <div className="custom-container">
+            <div className="custom-container mb-3">
                 <Col lg={6}>
-                    <h1><b>{t('Thaiproperty')}</b></h1>
+                    <h3><b>{t('Thaiproperty')}</b></h3>
                     <div className="boder-red-bottom"></div>
-                    <h3>{t('goodproject')}</h3>
+                    <h5>{t('goodproject')}</h5>
                 </Col>
             </div>
             <div className="custom-container">

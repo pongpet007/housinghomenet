@@ -12,19 +12,19 @@ export default function footer() {
                 <Col className="mt-5">
                  <ul className="text-footer">
                      <li>
-                        <h3><Link href="#">{t('home')}</Link></h3>
+                        <h5><Link href="#">{t('home')}</Link></h5>
                      </li>
                      <li>
-                         <h3><Link href="#">{t('InterestingAssets')}</Link></h3>
+                         <h5><Link href="#">{t('InterestingAssets')}</Link></h5>
                      </li>
                      <li>
-                         <h3><Link href="#">{t('RentalAnnouncement')}</Link></h3>
+                         <h5><Link href="#">{t('RentalAnnouncement')}</Link></h5>
                      </li>
                      <li>
-                         <h3><Link href="#">{t('homeservice')}</Link></h3>
+                         <h5><Link href="#">{t('homeservice')}</Link></h5>
                      </li>
                      <li>
-                         <h3><Link href="#">{t('news')}</Link></h3>
+                         <h5><Link href="#">{t('news')}</Link></h5>
                      </li>
                  </ul>
                 </Col>

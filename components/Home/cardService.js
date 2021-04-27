@@ -13,7 +13,7 @@ function cardService() {
     return (
         <div className="mb-5">
             <Row>
-                <Col lg={6}>
+                <Col lg={6} className="mb-3">
                 <a href="#" target="_blank"> 
                         <Images
                         src="/assets/images/p-5.jpg"
@@ -24,8 +24,8 @@ function cardService() {
 
                 </Col>
                 <Col lg={6}>
-                    <h2 data-aos="fade-left" className="text-service"><Link href="#">บริการต่อเติม</Link></h2>
-                    <h4>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euisLorem</h4>
+                    <h5 data-aos="fade-left" className="text-service"><Link href="#">บริการต่อเติม</Link></h5>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euisLorem</p>
                 </Col>
             </Row>
         </div>

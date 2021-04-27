@@ -46,7 +46,7 @@ const Headers = () => {
                                     <NavDropdown title={t('changelanguage')} id="basic-nav-dropdown" className="mr-3 ml-3">
                                         <NavDropdown.Item >
                                             <Link href="/" locale="th" key={lang}>
-                                                <h5>
+                                                <h5 className="font-26">
                                                     <Image
                                                         src="/assets/images/th.svg"
                                                         alt="thai"
@@ -59,7 +59,7 @@ const Headers = () => {
                                         </NavDropdown.Item>
                                         <NavDropdown.Item >
                                             <Link href="/" locale="en" key={lang}>
-                                                <h5>
+                                                <h5 className="font-26">
                                                     <Image
                                                         src="/assets/images/en.svg"
                                                         alt={t('tha')}
@@ -72,10 +72,10 @@ const Headers = () => {
                                         </NavDropdown.Item>
                                     </NavDropdown>
                                     <NavDropdown title={t('singin')} id="basic-nav-dropdown" className="mr-3 ml-3">
-                                        <NavDropdown.Item href="#action/3.1"><h5>{t('myaccount')}</h5></NavDropdown.Item>
-                                        <NavDropdown.Item href="#action/3.3"><h5>{t('forgetpassword')}</h5></NavDropdown.Item>
+                                        <NavDropdown.Item href="#action/3.1"><h5 className="font-26">{t('myaccount')}</h5></NavDropdown.Item>
+                                        <NavDropdown.Item href="#action/3.3"><h5 className="font-26">{t('forgetpassword')}</h5></NavDropdown.Item>
                                         <NavDropdown.Divider />
-                                        <NavDropdown.Item href="#action/3.4"><h5>{t('register')}</h5></NavDropdown.Item>
+                                        <NavDropdown.Item href="#action/3.4"><h5 className="font-26">{t('register')}</h5></NavDropdown.Item>
                                     </NavDropdown>
 
                                     <Nav.Link className="favorate count-style mr-2 ml-2">
