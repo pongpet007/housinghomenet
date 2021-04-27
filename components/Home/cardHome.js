@@ -4,7 +4,7 @@ import Images from 'next/image'
 import Link from 'next/link'
 import useTranslation from 'next-translate/useTranslation'
 
-export default function cardHome({url,name,address,price}) {
+export default function cardHome({asset_id,url,name,address,price}) {
     const { t, lang } = useTranslation('common')
     return (<>
               
@@ -35,7 +35,7 @@ export default function cardHome({url,name,address,price}) {
                                     height={35} />
                             </div>
                             <Card.Body>
-                                <Link href="#"><a target="_blank"><h4>{name}</h4></a></Link>
+                                <Link href={`/${lang}/asset/${asset_id}`}><a target="_blank" ><h2>{name}</h2></a></Link>
                                 <p>{address}</p>
                                 <h3><b>{price}</b></h3>
                                 <ul className="list-icon-bottom">

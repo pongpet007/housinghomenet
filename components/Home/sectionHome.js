@@ -46,13 +46,13 @@ function sectionHome() {
                 <Col>
                     <Tab.Content>
                         <Tab.Pane eventKey="link-1">
-                            <ItemHome />
+                            <ItemHome asset_type_id={1} />
                         </Tab.Pane>
                         <Tab.Pane eventKey="link-2">
-                            <ItemHome />
+                            <ItemHome asset_type_id={2}/>
                         </Tab.Pane>
                         <Tab.Pane eventKey="link-3">
-                            <ItemHome />
+                            <ItemHome asset_type_id={3}/>
                         </Tab.Pane>
 
                     </Tab.Content>
