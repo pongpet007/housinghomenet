@@ -20,7 +20,7 @@ export default function itemHome({ asset_type_id }) {
                         let pic = asset.pictures[0] ? process.env.NEXT_PUBLIC_API_PREFIX + 'images/gallery/' + asset.pictures[0].filename : `/assets/images/p-1.jpg`
                         // console.log(pic)
                         return (
-                            <Col xs={6} lg={3} key="{asset.asset_id}" className="mb-display-r" >
+                            <Col xs={6} lg={3} key={asset.asset_id} className="mb-display-r" >
                                 <CardHome asset_id={asset.asset_id} url={pic} name={asset.title_th} address={asset.place_th} price={asset.price} />
                             </Col>
                         )

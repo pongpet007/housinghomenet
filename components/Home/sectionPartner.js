@@ -7,7 +7,7 @@ import useSWR from 'swr'
 function sectionPartner() {
 
         const fetcher = (...args) => fetch(...args).then(res => res.json())
-        const { data, error } = useSWR('https://www.housinghome.net/api/ImageSet/getList?banner_type_id=3&limit=12&page=1', fetcher)
+        const { data, error } = useSWR('https://www.housinghome.net/api/Imageset/getList?banner_type_id=3&limit=12&page=1', fetcher)
 
         const { t, lang } = useTranslation('common')
         return (
