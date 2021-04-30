@@ -3,10 +3,20 @@ import useTranslation from 'next-translate/useTranslation'
 import CardHome from "../../components/Home/cardHome"
 import { Row, Col } from 'react-bootstrap'
 import Head_meta from "../../components/Head_meta"
+import {getAssetList} from '../../lib/api'
+import {useRouter} from 'next/router'
 
-const index = ({ data }) => {
+const index = () => {
+    const router = useRouter();
+    const asset_type_id =  router.query.asset_type_id;
     // console.log(data)
     const { t, lang } = useTranslation('common')
+    const params = {
+        asset_type_id,
+        limit:12,
+        page:1
+    }
+    const data =  getAssetList(params);
 
     return (
         <>
@@ -37,30 +47,30 @@ const index = ({ data }) => {
     )
 }
 
-const checkundefined = (t) => (t === undefined) ? 0 : t
+// const checkundefined = (t) => (t === undefined) ? 0 : t
 
-export async function getServerSideProps({ query }) {
-    let { asset_type_id, sale_type_id, is_new, keyword } = query
-    asset_type_id = !(asset_type_id===undefined)?asset_type_id:0
-    sale_type_id = !(sale_type_id===undefined)?sale_type_id:0
-    is_new = !(is_new===undefined)?is_new:0
-    keyword = !(keyword===undefined)?keyword:''
+// export async function getServerSideProps({ query }) {
+//     let { asset_type_id, sale_type_id, is_new, keyword } = query
+//     asset_type_id = !(asset_type_id===undefined)?asset_type_id:0
+//     sale_type_id = !(sale_type_id===undefined)?sale_type_id:0
+//     is_new = !(is_new===undefined)?is_new:0
+//     keyword = !(keyword===undefined)?keyword:''
 
-    let params = {
-        asset_type_id,
-        sale_type_id,
-        keyword,
-        is_new,
-        limit: 12,
-        page: 1
-    }
+//     let params = {
+//         asset_type_id,
+//         sale_type_id,
+//         keyword,
+//         is_new,
+//         limit: 12,
+//         page: 1
+//     }
 
-    let queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
-    const res = await fetch(process.env.NEXT_PUBLIC_API_PREFIX + `asset/getlistbytype?` + queryString)
-    let data = await res.json()
+//     let queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
+//     const res = await fetch(process.env.NEXT_PUBLIC_API_PREFIX + `asset/getlistbytype?` + queryString)
+//     let data = await res.json()
 
-    return { props: { data } }
-}
+//     return { props: { data } }
+// }
 
 
 export default index

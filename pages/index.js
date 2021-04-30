@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Banner from '../components/Home/sectionBanner'
 import BannerSponser from '../components/Home/sectionBannerSponser'
 import BannerSponserBottom from '../components/Home/sectionBannerSponseBottom'
-import Service from '../components/Home/sectionService'
+import SectionService from '../components/Home/sectionService'
 import SectionHome from '../components/Home/sectionHome'
 import { useRouter } from "next/router"
 import Head_meta from '../components/Head_meta'
@@ -11,15 +11,15 @@ import SectionPartner from '../components/Home/sectionPartner'
 
 
 function index(props) {
-  
+
   const router = useRouter()
 
 
   // const [data, setData] = useState(null);
-  
+
   // const fetcher = (...args) => fetch(...args).then(res => res.json())
   // const { data, error } = useSWR('https://www.housinghome.net/api/Slide/getList', fetcher)
-  
+
   // if (error) return <div>failed to load</div>
   // if (!data) return <div>loading...</div>
 
@@ -42,15 +42,17 @@ function index(props) {
 
   return (
     <div>
+
       <Head_meta />
+      
       <Banner />
       <BannerSponser />
 
       <SectionHome />
-      
+
       <BannerSponserBottom />
-      <Service />
-      
+      <SectionService />
+
       <SectionPartner />
 
     </div>

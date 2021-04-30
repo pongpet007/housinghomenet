@@ -28,7 +28,7 @@ function sectionPartner() {
                                                         // console.log(pic)
                                                         return (
 
-                                                                <Col xs={3} lg={1} className="mb-3">
+                                                                <Col key={banner.banner_id} xs={3} lg={1} className="mb-3">
                                                                         <a href={banner.link} target="_blank">
                                                                                 <Images
                                                                                         src={pic}

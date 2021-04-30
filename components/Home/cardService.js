@@ -6,26 +6,29 @@ import Link from 'next/link'
 
 
 
-function cardService() {
+function cardService({ pictureurl, title, desc }) {
     const { t, lang } = useTranslation('common')
-    
+
 
     return (
         <div className="mb-5">
             <Row>
                 <Col lg={6} className="mb-3">
-                <a href="#" target="_blank"> 
+                    <Link href="#">
+                    <a target="_blank">
                         <Images
-                        src="/assets/images/p-5.jpg"
-                        alt="ItemHome"
-                        layout="responsive"
-                        width={231}
-                        height={155} /></a>
+                            src={pictureurl?pictureurl:"/assets/images/p-5.jpg"}
+                            alt="ItemHome"
+                            layout="responsive"
+                            width={231}
+                            height={155} />
+                            </a>
+                            </Link>
 
                 </Col>
                 <Col lg={6}>
-                    <h5 data-aos="fade-left" className="text-service"><Link href="#">บริการต่อเติม</Link></h5>
-                    <p className="detail-service">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euisLorem</p>
+                    <Link href="#"><a><h5 data-aos="fade-left" className="text-service">{title?title:'หัวเรื่อง'}</h5></a></Link>
+                    <p className="detail-service">{desc?desc:"รายละเอียด"}</p>
                 </Col>
             </Row>
         </div>

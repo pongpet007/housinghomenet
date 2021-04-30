@@ -15,15 +15,10 @@ import 'react-owl-carousel2/src/owl.theme.default.css';
 // import 'react-owl-carousel2/src/owl.theme.green.css';
 import 'react-owl-carousel2/lib/styles.css';
 import Head from 'next/head'
+// import { getAssetOne } from '../../lib/api'
 
+const asset_item = ({data:{asset}}) => {
 
-const asset_item = (
-    { data:
-        {
-            asset
-        }
-    }
-) => {
     const router = useRouter()
     const { asset_id } = router.query
 
@@ -33,14 +28,20 @@ const asset_item = (
         }
     }, [])
 
-    const pictures = []
+    // const data = getAssetOne(asset_id);
+    // console.log(asset);
+
+    let pictures = []
     asset.pictures.map(
         (picture, index) => {
 
             let pic = picture.filename ? process.env.NEXT_PUBLIC_API_PREFIX + 'images/gallery/' + picture.filename : `/assets/images/p-1.jpg`
             pictures.push(pic)
         })
-    // console.log(pictures)
+    
+    // return <div>xx</div>
+
+    // // console.log(pictures)
     // const handleImageClick = (a) => {
     //     alert('x');
     // }
@@ -86,7 +87,7 @@ const asset_item = (
             /> */}
 
             <OwlCarousel options={OWLoptions} >
-                {pictures.map(
+                {pictures && pictures.map(
                     (picture, index) => {
                         return (
                             <div key={index} style={{ height: '350px', overflow: 'hidden' }}><img src={picture} alt="xxx" /></div>
@@ -346,6 +347,18 @@ export async function getServerSideProps({ query }) {
 
     return { props: { data } }
 }
+
+// asset_item.getInitialProps = async ({ query }) => {
+//     let { asset_id } = query
+//     asset_id = !(asset_id === undefined) ? asset_id : 0
+
+//     const res = await fetch(process.env.NEXT_PUBLIC_API_PREFIX + `asset/getOne?asset_id=` + asset_id)
+//     let data = await res.json()
+
+//     return {
+//         resource: data
+//     }
+// }
 
 
 export default asset_item
