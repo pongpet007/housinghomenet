@@ -6,7 +6,7 @@ import Head_meta from "../../components/Head_meta";
 import { getAssetList } from "../../lib/api";
 import { useRouter } from "next/router";
 import YellowBreadcrumb from "../../components/shared/YellowBreadcrumb";
-
+import BaseLayout from "../../components/layout/BaseLayout";
 const index = () => {
   const router = useRouter();
   const asset_type_id = router.query.asset_type_id;
@@ -20,7 +20,7 @@ const index = () => {
   const data = getAssetList(params);
 
   return (
-    <>
+    <BaseLayout>
       <Head_meta />
       <YellowBreadcrumb
         data={[
@@ -57,7 +57,7 @@ const index = () => {
             })}
         </Row>
       </div>
-    </>
+    </BaseLayout>
   );
 };
 

@@ -2,10 +2,12 @@ import { Container, Row, Col } from "react-bootstrap";
 import Head_meta from "../../components/Head_meta";
 import YellowBreadcrumb from "../../components/shared/YellowBreadcrumb";
 import useTranslation from "next-translate/useTranslation";
+import BaseLayout from "../../components/layout/BaseLayout";
+
 const Promotion = (props) => {
   const { t, lang } = useTranslation("common");
   return (
-    <div>
+    <BaseLayout>
       <Head_meta />
 
       <YellowBreadcrumb
@@ -22,7 +24,7 @@ const Promotion = (props) => {
           </Col>
         </Row>
       </Container>
-    </div>
+    </BaseLayout>
   );
 };
 
