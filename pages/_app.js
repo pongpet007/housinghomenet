@@ -1,33 +1,41 @@
-import '../styles/header.css'
-import '../styles/globals.css'
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import React from "react"
-import Headers from '../components/Headers'
-import Footer from '../components/Footer'
-import IconContact from '../components/iconContact'
+import "../styles/header.css";
+import "../styles/globals.css";
 
-import Head from 'next/head'
-import { wrapper } from "../redux/store"
+import React from "react";
+import Headers from "../components/Headers";
+import Footer from "../components/Footer";
+import IconContact from "../components/iconContact";
+
+import Head from "next/head";
+import { wrapper } from "../redux/store";
 
 function MyApp({ Component, pageProps }) {
-  return (
+  const parking = false;
+  return parking === true ? (
     <div>
-      <Head>       
-          <meta charSet="UTF-8" />         
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-          <meta name="author" content="Brandex Directory Co., Ltd." />
-          <meta name="robots" content="index,follow" />   
-          {/* <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossOrigin="anonymous"></script> */}
-              
+      <h1>Under construction</h1>
+    </div>
+  ) : (
+    <div>
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+        <meta name="author" content="Brandex Directory Co., Ltd." />
+        <meta name="robots" content="index,follow" />
+        {/* <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossOrigin="anonymous"></script> */}
       </Head>
-   
+
       <Headers />
-      <Component {...pageProps} />
-      <IconContact/>
+      <div style={{ marginTop: 65 }}>
+        <Component {...pageProps} />
+      </div>
+      {/* <IconContact /> */}
       <Footer />
     </div>
-  )
+  );
 }
 
 export default wrapper.withRedux(MyApp);

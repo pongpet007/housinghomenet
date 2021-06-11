@@ -1,90 +1,102 @@
-import React from 'react'
-import Link from 'next/link'
-import { Col, Row } from 'react-bootstrap'
-import Images from 'next/image'
-import useTranslation from 'next-translate/useTranslation'
+import React from "react";
+import Link from "next/link";
+import { Col, Row } from "react-bootstrap";
+import Images from "next/image";
+import useTranslation from "next-translate/useTranslation";
 
 export default function footer() {
-    const { t, lang } = useTranslation('common')
-    return (
-        <div className="bg-footer pt-5 pb-5">
-            <div className="custom-container" style={{textAlign:"center"}}>
-                <Col className="mt-5">
-                 <ul className="text-footer">
-                     <li>
-                        <h5><Link href="#">{t('home')}</Link></h5>
-                     </li>
-                     <li>
-                         <h5><Link href="#">{t('InterestingAssets')}</Link></h5>
-                     </li>
-                     <li>
-                         <h5><Link href="#">{t('RentalAnnouncement')}</Link></h5>
-                     </li>
-                     <li>
-                         <h5><Link href="#">{t('homeservice')}</Link></h5>
-                     </li>
-                     <li>
-                         <h5><Link href="#">{t('news')}</Link></h5>
-                     </li>
-                 </ul>
-                </Col>
-                <Col className="mt-5 mb-5">
-                <h1 className="text-footer-h1">{t('FindAttractive')}
-                 <b style={{color:"#FE4B6D",textDecoration:"underline",paddingLeft:"5px"}}>HOUSING</b>
-                   <b style={{textDecoration:"underline"}} > HOME.NET</b></h1>
-                </Col>
-                <Col >
-
-                 <ul className="text-footer-2">
-                     <li  className="border-r-footer">
-                        <h4><Link href="#">© 2020 HOUSINGHOME.NET</Link></h4>
-                     </li>
-                     <li className="border-r-footer">
-                         <h4 >{t('tel')}<Link href="#">02-320-5915</Link></h4>
-                     </li>
-                     <li>
-                         <h4>{t('email')}<Link href="#">housinghome@hotmail.com</Link></h4>
-                     </li>
-                 </ul>
-
-                 </Col>
-
-                 <Col className="mt-5 mb-5">
-                 <ul className="text-footer-2 ">
-                     <li className="pr-3 pl-3">
-                     <a href="#" target="_blank">
-                         <Images
-                            src="/assets/images/icon-footer-05.svg"
-                            alt="partner"
-                            link="#"
-                            width={42}
-                            height={42} />
-                           
-                         </a>
-                     </li>
-                     <li  className="pr-3 pl-3">
-                     <a href="#" target="_blank"><Images
-                            src="/assets/images/icon-footer-06.svg"
-                            alt="partner"
-                            width={42}
-                           
-                            height={42} /></a>
-                     </li>
-                     <li  className="pr-3 pl-3">
-                     <a href="#" target="_blank"> <Images
-                            src="/assets/images/icon-footer-07.svg"
-                            alt="partner"
-                            width={42}
-                            
-                            height={42} />
-                        </a>
-                     </li>
-                 </ul>
-                 
-                 </Col>
-
-            </div>
-            
-        </div>
-    )
+  const { t, lang } = useTranslation("common");
+  return (
+    <div className="footer bg-footer pt-5 pb-5">
+      <div className="container" style={{ textAlign: "center" }}>
+        <Row>
+          <Col lg={3}>
+            <h5>บ้านที่ดินเช่าซื้อ</h5>
+            <ul>
+              <li>
+                <Link href={`/${lang}/asset?asset_type_id=1`}>
+                  <a>ขายบ้านทีดิน</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="#">
+                  <a>พื้นที่ทำงานร่วมกัน</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="#">
+                  <a>บ้านพักท่องเที่ยว</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="#">
+                  <a>ประกาศให้เช่า</a>
+                </Link>
+              </li>
+            </ul>
+          </Col>
+          <Col lg={3}>
+            <h5>งานบริการเกี่ยวกับบ้าน</h5>
+            <ul>
+              <li>
+                <Link href={`/${lang}/service/register`}>
+                  <a>สมัครเป็นผู้ให้บริการ</a>
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/service`}>
+                  <a>บริการเพื่อความเป็น VIP</a>
+                </Link>
+              </li>
+            </ul>
+          </Col>
+          <Col lg={3}>
+            <h5>โครงการใหม่</h5>
+            <ul>
+              <li>
+                <Link href={`/${lang}/project/promotion`}>
+                  <a>โปรโมชั่นโครงการใหม่</a>
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/project/review`}>
+                  <a>รีวิวโครงการใหม่</a>
+                </Link>
+              </li>
+            </ul>
+          </Col>
+          <Col lg={3}>
+            <h5>นายหน้าออนไลน์</h5>
+            <ul>
+              <li>
+                <Link href={`/${lang}/aboutus/why`}>
+                  <a>ทำไมต้องเรา</a>
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/aboutus/saleasset`}>
+                  <a>บริการขายสินทรัพย์</a>
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/aboutus/package`}>
+                  <a>แพคเกจขายสินทรัพย์</a>
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/aboutus/step`}>
+                  <a>ขั้นตอนการให้บริการ</a>
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${lang}/aboutus/qa`}>
+                  <a> ถาม-ตอบ</a>
+                </Link>
+              </li>
+            </ul>
+          </Col>
+        </Row>
+      </div>
+    </div>
+  );
 }

@@ -1,0 +1,8 @@
+
+RewriteEngine On
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^pttor.com [NC]
+RewriteRule ^(.*)$ https://pttlubricants.pttor.com/$1 [L,R=301,NC]
