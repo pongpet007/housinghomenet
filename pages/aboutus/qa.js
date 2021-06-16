@@ -3,6 +3,7 @@ import Head_meta from "../../components/Head_meta";
 import YellowBreadcrumb from "../../components/shared/YellowBreadcrumb";
 import useTranslation from "next-translate/useTranslation";
 import BaseLayout from "../../components/layout/BaseLayout";
+import PageContent from "../../components/shared/PageContent";
 
 const QA = (props) => {
   const { t, lang } = useTranslation("common");
@@ -20,7 +21,7 @@ const QA = (props) => {
       <Container>
         <Row>
           <Col lg={12}>
-            <h1>QA</h1>
+            <PageContent page_id={4} />
           </Col>
         </Row>
       </Container>

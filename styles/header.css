@@ -3,10 +3,14 @@
 body {
   font-family: "Kanit", sans-serif !important;
 }
+.mr-auto,
+.mx-auto {
+  margin-right: auto !important;
+}
 .breadcrumb {
   background-color: unset;
   font-size: 14px;
-  margin: 0;
+  margin: 10px 0;
 }
 .footer h5 {
   text-align: left;

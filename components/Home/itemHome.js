@@ -34,7 +34,7 @@ export default function itemHome({ asset_type_id }) {
   };
 
   return (
-    <div className="custom-container form-header">
+    <div className=" form-header">
       <Row>
         {data &&
           data.assets.map((asset) => {

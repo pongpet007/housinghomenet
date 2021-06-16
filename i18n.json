@@ -5,8 +5,7 @@
   ],
   "defaultLocale": "th",
   "pages": {
-    "*": [
-      "common"
-    ]
+    "*": ["common"]
+    
   }
 }

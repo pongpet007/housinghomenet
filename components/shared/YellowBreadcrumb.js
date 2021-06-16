@@ -8,9 +8,10 @@ const YellowBreadcrumb = (props) => {
           <Col lg={12}>
             <Breadcrumb>
               {props.data &&
-                props.data.map((item) => {
+                props.data.map((item, idx) => {
                   return (
                     <Breadcrumb.Item
+                      key={idx}
                       href={item.url ? item.url : ""}
                       active={item.active}
                     >

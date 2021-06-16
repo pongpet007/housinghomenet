@@ -3,16 +3,18 @@ import Head_meta from "../../components/Head_meta";
 import YellowBreadcrumb from "../../components/shared/YellowBreadcrumb";
 import useTranslation from "next-translate/useTranslation";
 import BaseLayout from "../../components/layout/BaseLayout";
+import PageContent from "../../components/shared/PageContent";
 
 const Why = (props) => {
   const { t, lang } = useTranslation("common");
+
   return (
     <BaseLayout>
       <Head_meta />
 
       <YellowBreadcrumb
         data={[
-          { name: t("home"), url: `/${lang}` },
+          { name: t("common:home"), url: `/${lang}` },
           { name: "Why", url: "", active: true },
         ]}
       />
@@ -20,7 +22,7 @@ const Why = (props) => {
       <Container>
         <Row>
           <Col lg={12}>
-            <h1>Why</h1>
+            <PageContent page_id={1} />
           </Col>
         </Row>
       </Container>
