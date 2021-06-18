@@ -7,9 +7,13 @@ import { getAssetList } from "../../lib/api";
 import { useRouter } from "next/router";
 import YellowBreadcrumb from "../../components/shared/YellowBreadcrumb";
 import BaseLayout from "../../components/layout/BaseLayout";
+import BarSearch from "../../components/BarSearch";
+
 const index = () => {
   const router = useRouter();
-  const asset_type_id = router.query.asset_type_id;
+  const asset_type_id = router.query.asset_type_id
+    ? router.query.asset_type_id
+    : 0;
   // console.log(data)
   const { t, lang } = useTranslation("common");
   const params = {
@@ -22,13 +26,15 @@ const index = () => {
   return (
     <BaseLayout>
       <Head_meta />
+      <BarSearch />
       <YellowBreadcrumb
         data={[
           { name: t("home"), url: `/${lang}` },
           { name: "ขายบ้านที่ดิน", url: "", active: true },
         ]}
       />
-      <div className="container form-header">
+
+      {/* <div className="container form-header">
         <Row>
           {data &&
             data.assets.map((asset) => {
@@ -56,7 +62,7 @@ const index = () => {
               );
             })}
         </Row>
-      </div>
+      </div> */}
     </BaseLayout>
   );
 };

@@ -10,71 +10,7 @@ import SectionPartner from "../components/Home/sectionPartner";
 import { Col, Nav, Row, Form } from "react-bootstrap";
 import useTranslation from "next-translate/useTranslation";
 import BaseLayout from "../components/layout/BaseLayout";
-
-const BarSearch = (props) => {
-  const { t, lang } = useTranslation("common");
-  return (
-    <div className="pt-3">
-      <div
-        className="container form-header bg-red"
-        style={{
-          borderRadius: 10,
-          top: -45,
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
-        <Row>
-          <Col xs lg="3">
-            <Form.Group controlId="exampleForm.ControlSelect1">
-              <Form.Label className="font-label">{t("Need")}</Form.Label>
-              <Form.Control
-                as="select"
-                name="sale_type"
-                className="form-header"
-              >
-                <option>{t("select")}</option>
-                <option>{t("sell")}</option>
-                <option>{t("rental")}</option>
-              </Form.Control>
-            </Form.Group>
-          </Col>
-          <Col xs lg="3">
-            <Form.Group controlId="exampleForm.ControlSelect1">
-              <Form.Label className="font-label">{t("property")}</Form.Label>
-              <Form.Control
-                as="select"
-                name="asset_type"
-                className="form-header"
-              >
-                <option value={1}>{t("select")}</option>
-                <option value={2}>{t("land")}</option>
-                <option value={3}>{t("condo")}</option>
-                <option value={4}>{t("townhome")}</option>
-                <option value={5}>{t("Detached-house")}</option>
-                <option value={6}>{t("Semi-detached-house")}</option>
-              </Form.Control>
-            </Form.Group>
-          </Col>
-
-          <Col xs lg="4">
-            <Form.Group>
-              <Form.Label className="font-label">{t("search")}</Form.Label>
-              <Form.Control
-                name="keyword"
-                placeholder={t("Location-project-condo-district")}
-                className="form-header"
-              />
-            </Form.Group>
-          </Col>
-          <Col xs lg="2">
-            <button className="btn-search-subimit">{t("search")}</button>
-          </Col>
-        </Row>
-      </div>
-    </div>
-  );
-};
+import BarSearch from "../components/BarSearch";
 
 function index2(props) {
   const router = useRouter();
@@ -105,7 +41,7 @@ function index2(props) {
     <BaseLayout>
       <Head_meta />
       <Banner />
-      <BarSearch />
+      <BarSearch isIndex={true} />
       <SectionHome />
       <SectionService />
       <SectionPartner />

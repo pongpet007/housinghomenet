@@ -32,7 +32,7 @@ const Headers = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="mr-auto">
                     <Nav.Item>
-                      <Link href={`/${lang}`}>
+                      <Link href={`/${lang}/index2`}>
                         <a>
                           <Image
                             src="/assets/images/logo-04.svg"
@@ -45,74 +45,77 @@ const Headers = () => {
                     </Nav.Item>
                   </Nav>
                   <Nav className="Navbar-text mr-auto">
-                    <NavDropdown title="บ้านที่ดินเช่าซื้อ" id="nav-menu1">
+                    <NavDropdown
+                      title={t("houseandlandrentbuy")}
+                      id="nav-menu1"
+                    >
                       <div className="dropdown-item">
                         <Link href={`/${lang}/asset?asset_type_id=1`}>
-                          <a>ขายบ้านทีดิน</a>
+                          <a>{t("houseandland")}</a>
                         </Link>
                       </div>
 
                       <NavDropdown.Item eventKey="4.2">
-                        พื้นที่ทำงานร่วมกัน
+                        {t("coworkingspace")}
                       </NavDropdown.Item>
                       <NavDropdown.Item eventKey="4.3">
-                        บ้านพักท่องเที่ยว
+                        {t("fortravel")}
                       </NavDropdown.Item>
                       <NavDropdown.Item eventKey="4.3">
-                        ปะรกาศให้เช่า
+                        {t("forrent")}
                       </NavDropdown.Item>
                     </NavDropdown>
 
-                    <NavDropdown title="งานบริการเกี่ยวกับบ้าน" id="nav-menu2">
+                    <NavDropdown title={t("servicehousing")} id="nav-menu2">
                       <div className="dropdown-item">
                         <Link href={`/${lang}/service/register`}>
-                          <a>สมัครเป็นผู้ให้บริการ</a>
+                          <a>{t("registerforservice")}</a>
                         </Link>
                       </div>
                       <div className="dropdown-item">
                         <Link href={`/${lang}/service/`}>
-                          <a>บริการเพื่อความเป็น VIP</a>
+                          <a>{t("servicevip")}</a>
                         </Link>
                       </div>
                     </NavDropdown>
 
-                    <NavDropdown title="โครงการใหม่" id="nav-menu3">
+                    <NavDropdown title={t("newproject")} id="nav-menu3">
                       <div className="dropdown-item">
                         <Link href={`/${lang}/project/promotion`}>
-                          <a>โปรโมชั่นโครงการใหม่</a>
+                          <a>{t("promotionnewproject")}</a>
                         </Link>
                       </div>
                       <div className="dropdown-item">
                         <Link href={`/${lang}/project/review`}>
-                          <a>รีวิวโครงการใหม่</a>
+                          <a>{t("reviewnewproject")}</a>
                         </Link>
                       </div>
                     </NavDropdown>
 
-                    <NavDropdown title="นายหน้าออนไลน์" id="nav-menu4">
+                    <NavDropdown title={t("agentonline")} id="nav-menu4">
                       <div className="dropdown-item">
                         <Link href={`/${lang}/aboutus/why`}>
-                          <a>ทำไมต้องเรา</a>
+                          <a>{t("whyweare")}</a>
                         </Link>
                       </div>
                       <div className="dropdown-item">
                         <Link href={`/${lang}/aboutus/saleasset`}>
-                          <a>บริการขายสินทรัพย์</a>
+                          <a>{t("saleasset")}</a>
                         </Link>
                       </div>
                       <div className="dropdown-item">
                         <Link href={`/${lang}/aboutus/package`}>
-                          <a>แพคเกจขายสินทรัพย์</a>
+                          <a>{t("packagesale")}</a>
                         </Link>
                       </div>
                       <div className="dropdown-item">
                         <Link href={`/${lang}/aboutus/step`}>
-                          <a>ขั้นตอนการให้บริการ</a>
+                          <a>{t("stepsale")}</a>
                         </Link>
                       </div>
                       <div className="dropdown-item">
                         <Link href={`/${lang}/aboutus/qa`}>
-                          <a>ถาม-ตอบ</a>
+                          <a>{t("qa")}</a>
                         </Link>
                       </div>
                     </NavDropdown>
@@ -146,13 +149,15 @@ const Headers = () => {
                     </NavDropdown>
                     <Nav.Item>
                       <Link href={`/${lang}/member`}>
-                        <a className="nav-link">เข้าสู่ระบบ/ลงทะเบียน</a>
+                        <a className="nav-link">
+                          {t("login")}/{t("register")}
+                        </a>
                       </Link>
                     </Nav.Item>
                   </Nav>
                   <Nav>
                     <Nav.Item>
-                      <button className="post">ลงประกาศ</button>
+                      <button className="post">{t("freepost")}</button>
                     </Nav.Item>
                   </Nav>
                 </Navbar.Collapse>

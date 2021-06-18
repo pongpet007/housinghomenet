@@ -43,8 +43,9 @@ body {
   background-color: #ffc857;
 }
 .sugguestion h4 {
-  padding-left: 15px;
-  font-size: 18px;
+  padding-left: 10px;
+  font-size: 20px;
+  border-left: 5px solid #ffc857;
 }
 .home-address {
   font-size: 14px;
@@ -54,8 +55,9 @@ body {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.7);
 }
-.nav-item {
-}
+/* .nav-item {
+
+} */
 .title-home {
   font-size: 17px;
   font-weight: bold;
@@ -84,10 +86,11 @@ body {
   border-radius: 0rem;
   font-size: 14px;
 }
-.custom-container {
-  /* max-width: 1560px; */
-  /* margin: auto; */
-}
+
+/* .custom-container {
+   max-width: 1560px; 
+   margin: auto; 
+} */
 
 .custom-container.form-header {
   display: flex;
@@ -608,3 +611,9 @@ body {
   }
 }
 /* end Mobile */
+@media (min-width: 992px) {
+  .col-lg-8 {
+    flex: 0 0 auto;
+    width: 12.5%;
+  }
+}

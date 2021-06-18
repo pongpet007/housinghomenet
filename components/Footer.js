@@ -7,90 +7,90 @@ import useTranslation from "next-translate/useTranslation";
 export default function footer() {
   const { t, lang } = useTranslation("common");
   return (
-    <div className="footer bg-footer pt-5 pb-5">
+    <div className="footer bg-footer pt-5 pb-5 mt-5">
       <div className="container" style={{ textAlign: "center" }}>
         <Row>
           <Col lg={3}>
-            <h5>บ้านที่ดินเช่าซื้อ</h5>
+            <h5>{t("houseandlandrentbuy")}</h5>
             <ul>
               <li>
                 <Link href={`/${lang}/asset?asset_type_id=1`}>
-                  <a>ขายบ้านทีดิน</a>
+                  <a>{t("houseandland")}</a>
                 </Link>
               </li>
               <li>
                 <Link href="#">
-                  <a>พื้นที่ทำงานร่วมกัน</a>
+                  <a>{t("coworkingspace")}</a>
                 </Link>
               </li>
               <li>
                 <Link href="#">
-                  <a>บ้านพักท่องเที่ยว</a>
+                  <a>{t("fortravel")}</a>
                 </Link>
               </li>
               <li>
                 <Link href="#">
-                  <a>ประกาศให้เช่า</a>
+                  <a>{t("forrent")}</a>
                 </Link>
               </li>
             </ul>
           </Col>
           <Col lg={3}>
-            <h5>งานบริการเกี่ยวกับบ้าน</h5>
+            <h5>{t("servicehousing")}</h5>
             <ul>
               <li>
                 <Link href={`/${lang}/service/register`}>
-                  <a>สมัครเป็นผู้ให้บริการ</a>
+                  <a>{t("registerforservice")}</a>
                 </Link>
               </li>
               <li>
                 <Link href={`/${lang}/service`}>
-                  <a>บริการเพื่อความเป็น VIP</a>
+                  <a>{t("servicevip")}</a>
                 </Link>
               </li>
             </ul>
           </Col>
           <Col lg={3}>
-            <h5>โครงการใหม่</h5>
+            <h5>{t("newproject")}</h5>
             <ul>
               <li>
                 <Link href={`/${lang}/project/promotion`}>
-                  <a>โปรโมชั่นโครงการใหม่</a>
+                  <a>{t("promotionnewproject")}</a>
                 </Link>
               </li>
               <li>
                 <Link href={`/${lang}/project/review`}>
-                  <a>รีวิวโครงการใหม่</a>
+                  <a>{t("reviewnewproject")}</a>
                 </Link>
               </li>
             </ul>
           </Col>
           <Col lg={3}>
-            <h5>นายหน้าออนไลน์</h5>
+            <h5>{t("agentonline")}</h5>
             <ul>
               <li>
                 <Link href={`/${lang}/aboutus/why`}>
-                  <a>ทำไมต้องเรา</a>
+                  <a>{t("whyweare")}</a>
                 </Link>
               </li>
               <li>
                 <Link href={`/${lang}/aboutus/saleasset`}>
-                  <a>บริการขายสินทรัพย์</a>
+                  <a>{t("saleasset")}</a>
                 </Link>
               </li>
               <li>
                 <Link href={`/${lang}/aboutus/package`}>
-                  <a>แพคเกจขายสินทรัพย์</a>
+                  <a>{t("packagesale")}</a>
                 </Link>
               </li>
               <li>
                 <Link href={`/${lang}/aboutus/step`}>
-                  <a>ขั้นตอนการให้บริการ</a>
+                  <a>{t("stepsale")}</a>
                 </Link>
               </li>
               <li>
                 <Link href={`/${lang}/aboutus/qa`}>
-                  <a> ถาม-ตอบ</a>
+                  <a>{t("qa")}</a>
                 </Link>
               </li>
             </ul>

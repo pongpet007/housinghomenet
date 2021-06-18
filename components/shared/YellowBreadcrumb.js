@@ -2,7 +2,10 @@ import { Container, Row, Col, Breadcrumb } from "react-bootstrap";
 
 const YellowBreadcrumb = (props) => {
   return (
-    <div className="breadcrumb-bar" style={{ background: "#FFC857" }}>
+    <div
+      className="breadcrumb-bar"
+      style={{ background: "#FFC857", marginBottom: 30, padding: "10px 0" }}
+    >
       <Container>
         <Row>
           <Col lg={12}>

@@ -1,6 +1,6 @@
 {
     "home": "หน้าแรก",
-    "newproject": "โครงการใหม่",
+   
     "house": "ที่อยู่อาศัย",
     "land": "ที่ดิน",
     "service": "งานบริการ",
@@ -25,7 +25,7 @@
     "time-day":"เวลา 9.00-17.30น",
     "myaccount":"บัญชีของฉัน",
     "forgetpassword":"ลืมพาสเวิดร์",
-    "register":"ลงทะเบียนน",
+    
     "Need":"ต้องการ",
     "property":"สินทรัพย์",
     "search":"ค้นหา",
@@ -57,15 +57,44 @@
     "RentalAnnouncement":"ประกาศให้เช่า",
     "news":"ข่าวสาร",
     "tel":"โทร.",
-    "email":"อีเมล : ",
+    "email":"อีเมล",
 
     "FindAttractive":"ค้นหาสินทรัพย์น่าซื้อ ผ่านเว็บที่เชื่อถือได้",
 
     "title": "Title ภาษาไทย",    
-    "freepost": "ประกาศขายฟรี !!",
+    "freepost": "ลงประกาศ",
 
     "by":"by",
     "toilet":"toilet",
-    "Province":"Province"
+    "Province":"Province",
+
+    "houseandlandrentbuy":"บ้านที่ดินเช่าซื้อ",
+    "houseandland":"ขายบ้านทีดิน",
+    "coworkingspace":"พื้นที่ทำงานร่วมกัน",
+    "fortravel":"บ้านพักท่องเที่ยว",
+    "forrent":"ประกาศให้เช่า",
+
+    "servicehousing":"งานบริการเกี่ยวกับบ้าน",
+    "registerforservice":"สมัครเป็นผู้ให้บริการ",
+    "servicevip":"บริการเพื่อความเป็น VIP",
+
+    "newproject":"โครงการใหม่",
+    "promotionnewproject":"โปรโมชั่นโครงการใหม่",
+    "reviewnewproject":"รีวิวโครงการใหม่",
+
+    "agentonline":"นายหน้าออนไลน์",
+    "whyweare":"ทำไมต้องเรา",
+    "saleasset":"บริการขายสินทรัพย์",
+    "packagesale":"แพคเกจขายสินทรัพย์",
+    "stepsale":"ขั้นตอนการให้บริการ",
+    "qa":"ถาม-ตอบ",
+
+    "register":"ลงทะเบียนน",
+    "or":"หรือ",
+    "password":"รหัสผ่าน",
+    "repassword":"รหัสผ่านอีกครั้ง",
+    "registerbyemail":"ลงทะเบียนบัญชีผ่านอีเมล",
+    "login":"เข้าสู่ระบบ"
+    
        
 }   

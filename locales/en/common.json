@@ -1,7 +1,6 @@
 {
 
-    "home": "Home",
-    "newproject": "New Resident",
+    "home": "Home",   
     "house": "Housing",
     "land": "land",
     "service": "Services",
@@ -26,7 +25,7 @@
     "time-day":"Time 9.00-17.30",
     "myaccount":"My Account",
     "forgetpassword":"Forget Password",
-    "register":"Register",
+    
     
     "Need":"Need",
     "property":"Property",
@@ -61,17 +60,43 @@
     "homeservice":"Home Services",
     "Thaiproperty":"Get to know Thai property developers",
     "tel":"Tel.",
-    "email":"Email : ",
+    "email":"Email",
 
     "title":"Title English",    
-    "freepost":"Free post",
+    "freepost":"Create Post",
 
     "by":"by",
     "toilet":"toilet",
-    "Province":"Province"
+    "Province":"Province",
 
-    
+    "houseandlandrentbuy":"Buy - Rent",
+    "houseandland":"House for sale",
+    "coworkingspace":"Co-Working space",
+    "fortravel":"House for travel",
+    "forrent":"For rent",
 
+    "servicehousing":"Housing service",
+    "registerforservice":"Register worker service",
+    "servicevip":"For VIP",
+
+    "newproject":"New Project",
+    "promotionnewproject":"Promotion new project",
+    "reviewnewproject":"Review new project",
+
+    "agentonline":"Agent Online",
+    "whyweare":"Why we are ?",
+    "saleasset":"Help sale asset",
+    "packagesale":"Our package",
+    "stepsale":"Step of service",
+    "qa":"Question - Answer",
+
+
+    "register":"Register",
+    "or":"or",
+    "password":"Password",
+    "repassword":"Re-Password",
+    "registerbyemail":"Register By E mail",
+    "login":"Login"
     
 
    

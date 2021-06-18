@@ -35,7 +35,12 @@ function sectionPartner() {
                 `.jpg`;
               // console.log(pic)
               return (
-                <Col key={banner.banner_id} xs={3} lg={2} className="mb-3">
+                <Col
+                  key={banner.banner_id}
+                  xs={3}
+                  lg={1}
+                  className="col-lg-8 mb-3"
+                >
                   <Link href={banner.link}>
                     <a target="_blank">
                       <Images
