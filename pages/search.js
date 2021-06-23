@@ -35,14 +35,18 @@ const search = () => {
       <div className="container">
         <div className="row">
           <h1 style={{ color: "red", fontSize: 18 }}>
-            <span style={{ color: "black" }}>xxxx</span> ผลการค้นหา "" รายการ
+            <span style={{ color: "black" }}>9999</span> ผลการค้นหา "คำค้น"
+            รายการ
           </h1>
           {
             <div className="col-lg-6 asset-item">
               <div className="wrap">
                 <div className="row">
                   <div className="picture col">
-                    <img src="/../img-test.png" style={{ maxWidth: "100%" }} />
+                    <img
+                      src="/../images/img-test.png"
+                      style={{ maxWidth: "100%" }}
+                    />
                   </div>
                   <div className=" col">
                     <h5>

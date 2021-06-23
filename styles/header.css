@@ -612,8 +612,11 @@ body {
 }
 /* end Mobile */
 @media (min-width: 992px) {
-  .col-lg-8 {
+  .col-lg-8xx {
     flex: 0 0 auto;
     width: 12.5%;
   }
+}
+.form-control {
+  font-size: 14px;
 }
