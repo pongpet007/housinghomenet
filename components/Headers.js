@@ -50,20 +50,25 @@ const Headers = () => {
                       id="nav-menu1"
                     >
                       <div className="dropdown-item">
-                        <Link href={`/${lang}/asset?asset_type_id=1`}>
-                          <a>{t("houseandland")}</a>
-                        </Link>
+                        <a href={`/${lang}/asset?asset_type_id=1`}>
+                          {t("houseandland")}
+                        </a>
                       </div>
-
-                      <NavDropdown.Item eventKey="4.2">
-                        {t("coworkingspace")}
-                      </NavDropdown.Item>
-                      <NavDropdown.Item eventKey="4.3">
-                        {t("fortravel")}
-                      </NavDropdown.Item>
-                      <NavDropdown.Item eventKey="4.3">
-                        {t("forrent")}
-                      </NavDropdown.Item>
+                      <div className="dropdown-item">
+                        <a href={`/${lang}/asset?asset_type_id=2`}>
+                          {t("coworkingspace")}
+                        </a>
+                      </div>
+                      <div className="dropdown-item">
+                        <a href={`/${lang}/asset?asset_type_id=3`}>
+                          {t("fortravel")}
+                        </a>
+                      </div>
+                      <div className="dropdown-item">
+                        <a href={`/${lang}/asset?asset_type_id=4`}>
+                          {t("forrent")}
+                        </a>
+                      </div>
                     </NavDropdown>
 
                     <NavDropdown title={t("servicehousing")} id="nav-menu2">

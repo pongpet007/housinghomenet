@@ -1,41 +1,51 @@
-import React from "react";
-import { useState } from "react";
-import { connect } from "react-redux";
-import { setInfo } from "../../redux/actions/main";
-import useTranslation from "next-translate/useTranslation";
-import Head from "next/head";
+import { useEffect } from "react";
+import * as types from "../../redux/types";
+import {
+  fetbanner1,
+  fetbanner2,
+  fetbanner3,
+} from "../../redux/actions/banner.action";
+import { useSelector, useDispatch } from "react-redux";
 
-const testredux = (props) => {
-  // console.log(props);
-  const xname = props.userInfo.name;
-  const { setInfo } = props;
-  const [name, setName] = useState(xname);
-  const { t, lang } = useTranslation("common");
+const testredux = () => {
+  const bannerList = useSelector((state) => state.banner.bannerList);
+
+  const dispatch = useDispatch();
+
+  console.log(fetbanner3);
+
+  const b1 = () => {
+    dispatch(fetbanner1());
+  };
+  const b2 = () => {
+    dispatch(fetbanner2());
+  };
+
+  useEffect(() => {
+    dispatch(fetbanner1());
+  }, []);
 
   return (
     <div>
-      <Head>
-        <title>{t("title")}</title>
-      </Head>
-      <h1>{t("oaun")}</h1>
-      <h1>Hello test Redux : with : {xname}</h1>
-      <input
-        name="name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-
-      <button onClick={() => setInfo(name)}>Submit</button>
+      {JSON.stringify(bannerList)}
+      <div onClick={b1.bind(this)}>Banner1</div>
+      <div onClick={b2.bind(this)}>Banner2</div>
+      <div
+        onClick={() => {
+          dispatch(fetbanner3());
+        }}
+      >
+        Banner3
+      </div>
+      <div
+        onClick={() => {
+          dispatch({ type: types.GET_BANNER, payload: [10, 20, 30] });
+        }}
+      >
+        Banner 4
+      </div>
     </div>
   );
 };
 
-const mapStateToProps = (state) => ({
-  userInfo: state.main,
-});
-
-const mapDispatchToProps = {
-  setInfo,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(testredux);
+export default testredux;

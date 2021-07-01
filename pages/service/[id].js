@@ -4,8 +4,23 @@ import YellowBreadcrumb from "../../components/shared/YellowBreadcrumb";
 import useTranslation from "next-translate/useTranslation";
 import BaseLayout from "../../components/layout/BaseLayout";
 import Link from "next/link";
+
 const ServiceDetail = (props) => {
   const { t, lang } = useTranslation("common");
+  const data = [
+    "https://www.housinghome.net/api/images/gallery/2021Apr010311033568.jpg",
+    "https://www.housinghome.net/api/images/gallery/2021Apr010311033639.jpg",
+    "https://www.housinghome.net/api/images/gallery/2021Apr010311034633.jpg",
+    "https://www.housinghome.net/api/images/gallery/2021Apr010311034954.jpg",
+    "https://www.housinghome.net/api/images/gallery/2021Apr010311041000.jpg",
+    "https://www.housinghome.net/api/images/gallery/2021Apr010311041001.jpg",
+    "https://www.housinghome.net/api/images/gallery/2021Apr010311041140.jpg",
+    "https://www.housinghome.net/api/images/gallery/2021Apr010311041349.jpg",
+    "https://www.housinghome.net/api/images/gallery/2021Apr010311041484.jpg",
+    "https://www.housinghome.net/api/images/gallery/2021Apr010311042288.jpg",
+    "https://www.housinghome.net/api/images/gallery/2021Apr010311042710.jpg",
+    "https://www.housinghome.net/api/images/gallery/2021Apr010311044513.jpg",
+  ];
   return (
     <BaseLayout>
       <Head_meta />
@@ -26,7 +41,23 @@ const ServiceDetail = (props) => {
               <i className="fas fa-map-marker-alt"></i> ถนนบางนา-ตราด, บางแก้ว,
               บางพลี, สมุทรปราการ
             </div>
-            <div>Facebook Gallery</div>
+
+            {/* <FbImageLibrary
+              images={[
+                "https://www.housinghome.net/api/images/gallery/2021Apr010311033568.jpg",
+                "https://www.housinghome.net/api/images/gallery/2021Apr010311033639.jpg",
+                "https://www.housinghome.net/api/images/gallery/2021Apr010311034633.jpg",
+                "https://www.housinghome.net/api/images/gallery/2021Apr010311034954.jpg",
+                "https://www.housinghome.net/api/images/gallery/2021Apr010311041000.jpg",
+                "https://www.housinghome.net/api/images/gallery/2021Apr010311041001.jpg",
+                "https://www.housinghome.net/api/images/gallery/2021Apr010311041140.jpg",
+                "https://www.housinghome.net/api/images/gallery/2021Apr010311041349.jpg",
+                "https://www.housinghome.net/api/images/gallery/2021Apr010311041484.jpg",
+                "https://www.housinghome.net/api/images/gallery/2021Apr010311042288.jpg",
+                "https://www.housinghome.net/api/images/gallery/2021Apr010311042710.jpg",
+                "https://www.housinghome.net/api/images/gallery/2021Apr010311044513.jpg",
+              ]}
+            /> */}
             <div>
               <i className="far fa-clock"></i> 2 เดือนที่ผ่านมา{" "}
               <i className="far fa-eye"></i> 150 ผู้เข้าชม

@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
+import useTranslation from "next-translate/useTranslation";
 // import SimpleReactLightbox from 'simple-react-lightbox'
 // import { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col, Tab, Nav } from "react-bootstrap";
+import YellowBreadcrumb from "../../components/shared/YellowBreadcrumb";
 // import FbImageLibrary from 'react-fb-image-grid'
 import Head_meta from "../../components/Head_meta";
 
@@ -15,10 +17,11 @@ import "react-owl-carousel2/src/owl.theme.default.css";
 // import 'react-owl-carousel2/src/owl.theme.green.css';
 import "react-owl-carousel2/lib/styles.css";
 import Head from "next/head";
-// import { getAssetOne } from '../../lib/api'
+// import { getAssetOne } from "../../lib/api";
 import BaseLayout from "../../components/layout/BaseLayout";
 
 const asset_item = ({ data: { asset } }) => {
+  const { t, lang } = useTranslation("common");
   const router = useRouter();
   const { asset_id } = router.query;
 
@@ -43,7 +46,7 @@ const asset_item = ({ data: { asset } }) => {
 
   // return <div>xx</div>
 
-  // // console.log(pictures)
+  // console.log(pictures);
   // const handleImageClick = (a) => {
   //     alert('x');
   // }
@@ -74,7 +77,12 @@ const asset_item = ({ data: { asset } }) => {
   return (
     <BaseLayout>
       <Head_meta />
-
+      <YellowBreadcrumb
+        data={[
+          { name: t("common:home"), url: `/${lang}` },
+          { name: "Filter", url: "", active: true },
+        ]}
+      />
       {/*             
             <FbImageLibrary
                 images={pictures}
@@ -93,7 +101,7 @@ const asset_item = ({ data: { asset } }) => {
           })}
       </OwlCarousel>
 
-      <div id="asset_detail" className="custom-container ">
+      <div id="asset_detail" className="container ">
         <Row>
           <Col md={10} lg={9}>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -220,7 +228,7 @@ const asset_item = ({ data: { asset } }) => {
                     height="315"
                     src="https://www.youtube.com/embed/CAmotCLaAG0"
                     title="YouTube video player"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
                   ></iframe>

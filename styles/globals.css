@@ -36,3 +36,87 @@ a {
   height: 170px;
   font-size: 5rem !important;
 }
+
+.column-news {
+  height: 350px;
+  overflow: hidden;
+  font-size: 14px;
+}
+.column-news h2 {
+  font-size: 31px;
+}
+.column-news .desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.column-news .price {
+  font-size: 18px;
+}
+.column-news-text:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 1s;
+}
+.column-news-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  color: white;
+  transition: all 1s;
+}
+
+.column-project {
+  font-size: 14px;
+}
+
+.column-project .title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.column-project .desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.column-asset {
+  font-size: 14px;
+}
+
+.column-asset .title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.column-asset .desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.row-asset {
+  font-size: 14px;
+}
+
+.row-asset .title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.row-asset .desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
