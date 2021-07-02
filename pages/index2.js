@@ -7,7 +7,6 @@ import SectionHome from "../components/Home/sectionHome";
 import { useRouter } from "next/router";
 import Head_meta from "../components/Head_meta";
 import SectionPartner from "../components/Home/sectionPartner";
-import { Col, Nav, Row, Form } from "react-bootstrap";
 import useTranslation from "next-translate/useTranslation";
 import BaseLayout from "../components/layout/BaseLayout";
 import BarSearch from "../components/BarSearch";
@@ -21,7 +20,7 @@ function index2(props) {
       <Head_meta />
       <Banner />
       <BarSearch isIndex={true} />
-      {/* <SectionHome />*/}
+      <SectionHome />
       <SectionService />
       <SectionPartner />
     </BaseLayout>

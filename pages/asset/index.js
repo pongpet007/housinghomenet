@@ -10,7 +10,7 @@ import RowAsset from "../../components/card/rowAsset";
 import ColumnNews from "../../components/card/columnNews";
 import Link from "next/link";
 
-import { fetchAsset } from "../../redux/actions";
+import { fetchAsset, fetAssetTypeById } from "../../redux/actions";
 import { useSelector, useDispatch } from "react-redux";
 
 const index = () => {
@@ -19,15 +19,17 @@ const index = () => {
   const { t, lang } = useTranslation("common");
 
   const assetList = useSelector((state) => state.asset.assetList);
+  const assetType = useSelector((state) => state.asset.assetType);
   const asset_type_id = router.query.asset_type_id
     ? router.query.asset_type_id
     : 0;
 
   useEffect(() => {
     dispatch(fetchAsset({ asset_type_id: asset_type_id, limit: 20, page: 1 }));
+    dispatch(fetAssetTypeById(asset_type_id));
   }, []);
 
-  console.log(assetList);
+  // console.log(assetType);
   const { assets, totalrows, search } = assetList;
   const dataslice = assets?.slice(3, assets.length);
   return (
@@ -37,7 +39,14 @@ const index = () => {
       <YellowBreadcrumb
         data={[
           { name: t("home"), url: `/${lang}` },
-          { name: "ขายบ้านที่ดิน", url: "", active: true },
+          {
+            name:
+              lang === "th" && assetType
+                ? assetType.asset_type_name_th
+                : assetType.asset_type_name_en,
+            url: "",
+            active: true,
+          },
         ]}
       />
       <div className="container">
