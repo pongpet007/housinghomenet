@@ -120,7 +120,11 @@ const index = () => {
           <div className="col-lg-9">
             <div className="assetlist">
               <div className="mb-3">
-                <h4>ขายบ้านที่ดิน</h4>
+                <h4>
+                  {lang === "th" && assetType
+                    ? assetType.asset_type_name_th
+                    : assetType.asset_type_name_en}
+                </h4>
                 <button className="btn btn-danger">ขาย</button>
                 <button
                   className="btn btn-default"

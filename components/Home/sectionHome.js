@@ -19,7 +19,7 @@ function sectionHome() {
   let pic = "";
   const api_url = process.env.NEXT_PUBLIC_API_PREFIX;
   // console.log(assetList1);
-  // console.log(assetList2);
+  console.log(assetList2);
   return (
     <>
       <div className="container form-header showhome-mb">
@@ -72,6 +72,12 @@ function sectionHome() {
                   return (
                     <div className="col-lg-3" key={item.asset_id}>
                       <ColumnProject
+                        typeName={
+                          lang === "th"
+                            ? item.project_name_th
+                            : item.project_name_en
+                        }
+                        color="pink"
                         linkurl={`/${lang}/asset/${item.asset_id}`}
                         imgsrc={
                           item.pictures[0]

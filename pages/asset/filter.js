@@ -2,7 +2,7 @@ import Head_meta from "../../components/Head_meta";
 import YellowBreadcrumb from "../../components/shared/YellowBreadcrumb";
 import useTranslation from "next-translate/useTranslation";
 import BaseLayout from "../../components/layout/BaseLayout";
-import Link from "next/Link";
+import Link from "next/link";
 
 const Filter = (props) => {
   const { t, lang } = useTranslation("common");

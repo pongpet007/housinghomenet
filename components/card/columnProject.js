@@ -4,7 +4,7 @@ import Images from "next/image";
 import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 
-const ColumnProject = ({ linkurl, imgsrc, title, desc, color }) => {
+const ColumnProject = ({ linkurl, imgsrc, title, desc, color, typeName }) => {
   const { t, lang } = useTranslation("common");
   return (
     <>
@@ -18,10 +18,10 @@ const ColumnProject = ({ linkurl, imgsrc, title, desc, color }) => {
                   className="btn btn-danger"
                   style={{ backgroundColor: color, border: 0 }}
                 >
-                  บ้านเดี่ยว
+                  {typeName ? typeName : ""}
                 </a>
               ) : (
-                <a className="btn btn-danger">บ้านเดี่ยว</a>
+                <a className="btn btn-danger"> {typeName ? typeName : ""}</a>
               )}
             </Link>
           </div>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { CardGroup, Card, Col, Row, Button } from "react-bootstrap";
-import Images from "next/image";
+
 import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 
