@@ -3,7 +3,7 @@ import axios from "axios";
 
 const API_URL = process.env.NEXT_PUBLIC_API_PREFIX;
 
-export const fetBanner = (search) => async (dispatch) => {
+export const fetchBanner = (search) => async (dispatch) => {
   try {
     let params = {
       banner_type_id: search.banner_type_id > 0 ? search.banner_type_id : 0,

@@ -2,9 +2,8 @@ import React, { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
 import useTranslation from "next-translate/useTranslation";
 import Images from "next/image";
-import useSWR from "swr";
 import Link from "next/link";
-import { fetBanner } from "../../redux/actions";
+import { fetchBanner } from "../../redux/actions";
 import { useSelector, useDispatch } from "react-redux";
 
 function sectionPartner() {
@@ -14,7 +13,7 @@ function sectionPartner() {
   // console.log(bannerList);
 
   useEffect(() => {
-    dispatch(fetBanner({ banner_type_id: 3, limit: 12, page: 1 }));
+    dispatch(fetchBanner({ banner_type_id: 3, limit: 12, page: 1 }));
   }, []);
 
   const { banners, search, totalrows } = bannerList;

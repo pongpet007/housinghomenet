@@ -19,7 +19,7 @@ function sectionHome() {
   let pic = "";
   const api_url = process.env.NEXT_PUBLIC_API_PREFIX;
   // console.log(assetList1);
-  console.log(assetList2);
+  // console.log(assetList2);
   return (
     <>
       <div className="container form-header showhome-mb">

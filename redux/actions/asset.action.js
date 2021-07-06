@@ -27,7 +27,7 @@ export const fetchAsset = (search) => async (dispatch) => {
   }
 };
 
-export const fetAssetById = (url) => async (dispatch) => {
+export const fetchAssetById = (url) => async (dispatch) => {
   try {
     const response = await axios.get(url ? url : null);
     dispatch({
@@ -39,7 +39,7 @@ export const fetAssetById = (url) => async (dispatch) => {
   }
 };
 
-export const fetAssetTypeById = (asset_type_id) => async (dispatch) => {
+export const fetchAssetTypeById = (asset_type_id) => async (dispatch) => {
   try {
     const url = API_URL + "asset/getTypeOne?asset_type_id=" + asset_type_id;
     const response = await axios.get(url);
