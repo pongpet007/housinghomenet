@@ -23,7 +23,7 @@ export const fetchServiceType = (search) => async (dispatch) => {
   }
 };
 
-export const fetServiceTypeById = (service_type_id) => async (dispatch) => {
+export const fetchServiceTypeById = (service_type_id) => async (dispatch) => {
   try {
     const url =
       API_URL + "servicetype/getOne?service_type_id=" + service_type_id;
@@ -40,10 +40,10 @@ export const fetServiceTypeById = (service_type_id) => async (dispatch) => {
 export const fetchService = (search) => async (dispatch) => {
   try {
     let params = {
-      asset_type_id: search.asset_type_id ? search.asset_type_id : 0,
-      sale_type_id: search.sale_type_id ? search.sale_type_id : 0,
-      keyword: search.keyword ? search.keyword : 0,
-      is_new: search.is_new ? search.is_new : 0,
+      service_type_id: search.service_type_id ? search.service_type_id : "",
+      keyword: search.keyword ? search.keyword : "",
+      show_index: search.show_index ? search.show_index : 0,
+      country_id: search.country_id ? search.country_id : 221,
       limit: search.limit ? search.limit : 20,
       page: search.page ? search.page : 1,
     };
@@ -61,7 +61,7 @@ export const fetchService = (search) => async (dispatch) => {
   }
 };
 
-export const fetServiceById = (service_id) => async (dispatch) => {
+export const fetchServiceById = (service_id) => async (dispatch) => {
   try {
     const url = API_URL + "service/getOne?service_id=" + service_id;
     const response = await axios.get(url);

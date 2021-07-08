@@ -10,7 +10,7 @@ import RowAsset from "../../components/card/rowAsset";
 import ColumnNews from "../../components/card/columnNews";
 import Link from "next/link";
 
-import { fetchAsset, fetAssetTypeById } from "../../redux/actions";
+import { fetchAsset, fetchAssetTypeById } from "../../redux/actions";
 import { useSelector, useDispatch } from "react-redux";
 
 const index = () => {
@@ -26,7 +26,7 @@ const index = () => {
 
   useEffect(() => {
     dispatch(fetchAsset({ asset_type_id: asset_type_id, limit: 20, page: 1 }));
-    dispatch(fetAssetTypeById(asset_type_id));
+    dispatch(fetchAssetTypeById(asset_type_id));
   }, []);
 
   // console.log(assetType);

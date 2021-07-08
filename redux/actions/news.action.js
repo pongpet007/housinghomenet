@@ -23,7 +23,7 @@ export const fetchNewsType = (search) => async (dispatch) => {
   }
 };
 
-export const fetNewsTypeById = (news_type_id) => async (dispatch) => {
+export const fetchNewsTypeById = (news_type_id) => async (dispatch) => {
   try {
     const url = API_URL + "newstype/getOne?news_type_id=" + news_type_id;
     const response = await axios.get(url);
@@ -60,7 +60,7 @@ export const fetchNews = (search) => async (dispatch) => {
   }
 };
 
-export const fetNewsById = (news_id) => async (dispatch) => {
+export const fetchNewsById = (news_id) => async (dispatch) => {
   try {
     const url = API_URL + "news/getOne?news_id=" + news_id;
     const response = await axios.get(url);
