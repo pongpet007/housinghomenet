@@ -1,3 +1,11 @@
+import React from "react";
+
+const testredux = () => {
+  return <div></div>;
+};
+
+export default testredux;
+
 // import { useEffect } from "react";
 // import * as types from "../../redux/types";
 // import {

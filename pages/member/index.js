@@ -63,7 +63,7 @@ const Member = (props) => {
                 <div className="mb-3">
                   <button
                     type="button"
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                     style={{
                       backgroundColor: "#158791",
                       borderColor: "#158791",
@@ -84,7 +84,7 @@ const Member = (props) => {
                   <Col>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       id="email"
                       name="email"
                       placeholder={t("email")}
@@ -95,7 +95,7 @@ const Member = (props) => {
                   <Col>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       id="email"
                       name="email"
                       placeholder={t("password")}
@@ -106,7 +106,7 @@ const Member = (props) => {
                   <Col>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       id="email"
                       name="email"
                       placeholder={t("repassword")}
@@ -117,7 +117,7 @@ const Member = (props) => {
                   <Col>
                     <button
                       type="button"
-                      class="btn btn-primary"
+                      className="btn btn-primary"
                       style={{
                         backgroundColor: "#DB3A34",
                         borderColor: "#DB3A34",

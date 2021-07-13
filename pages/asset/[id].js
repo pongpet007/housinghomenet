@@ -23,10 +23,10 @@ import BaseLayout from "../../components/layout/BaseLayout";
 const asset_item = ({ data: { asset } }) => {
   const { t, lang } = useTranslation("common");
   const router = useRouter();
-  const { asset_id } = router.query;
+  const { id } = router.query;
 
   useEffect(() => {
-    if (isNaN(asset_id)) {
+    if (isNaN(id)) {
       router.push("/asset");
     }
   }, []);
@@ -339,8 +339,8 @@ const asset_item = ({ data: { asset } }) => {
 };
 
 export async function getServerSideProps({ query }) {
-  let { asset_id } = query;
-  asset_id = !(asset_id === undefined) ? asset_id : 0;
+  let { id } = query;
+  const asset_id = !(id === undefined) ? id : 0;
 
   const res = await fetch(
     process.env.NEXT_PUBLIC_API_PREFIX + `asset/getOne?asset_id=` + asset_id

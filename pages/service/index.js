@@ -16,41 +16,49 @@ const DEFAULT_DATA = {
 
 const VIP = () => {
   const [form, setForm] = useState(DEFAULT_DATA);
-
   const { t, lang } = useTranslation("common");
 
-  const handleChange = (e) => {
-    console.log(e);
+  const handleKeyword = (e) => {
+    const { name, value } = e.target;
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
+  const checkEnter = (e) => {
+    if (e.keyCode == 13 || e.charCode == 13) {
+      startSearch();
+    }
+  };
+
+  const startSearch = () => {
+    dispatch(
+      fetchService({
+        keyword: form.keyword,
+        service_type_id: form.service_type_id,
+        show_index: 1,
+        limit: 10,
+        country_id: lang === "en" ? 236 : 221,
+      })
+    );
+  };
+
+  const handleCheckbox = (e) => {
     const { name, value } = e.target;
     let x = 0;
-    if (name === "service_type_id") {
-      if (form[name].includes(value)) {
-        x = form[name].filter((v) => {
-          return v != value;
-        });
-      } else {
-        x = [...form[name], value];
-      }
+
+    if (form[name].includes(value)) {
+      x = form[name].filter((v) => {
+        return v != value;
+      });
     } else {
-      if (e.charCode == 13 || e.keyCode == 13) {
-        x = value;
-      }
+      x = [...form[name], value];
     }
 
     setForm({
       ...form,
       [name]: x,
     });
-
-    dispatch(
-      fetchService({
-        keyword: name === "keyword" ? x : "",
-        service_type_id: name === "service_type_id" ? x : "",
-        show_index: 1,
-        limit: 10,
-        country_id: lang === "en" ? 236 : 221,
-      })
-    );
   };
 
   const dispatch = useDispatch();
@@ -71,7 +79,7 @@ const VIP = () => {
     AOS.init();
   }, []);
   // console.log(serviceTypeList);
-  console.log(serviceList);
+  // console.log(serviceList);
 
   const URL_PREFIX = process.env.NEXT_PUBLIC_API_PREFIX;
 
@@ -95,13 +103,13 @@ const VIP = () => {
           <div className="col-lg-3">
             <h4>หมวดหมู่งานบริการ</h4>
             <div>
-              <ul style={{ listStyle: "none" }}>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
                 {serviceTypeList.servicetypes &&
                   serviceTypeList.servicetypes.map((item, idx) => {
                     return (
                       <li key={idx}>
                         <input
-                          onChange={handleChange}
+                          onChange={handleCheckbox}
                           type="checkbox"
                           checked={form["service_type_id"].includes(
                             item.service_type_id
@@ -116,6 +124,11 @@ const VIP = () => {
                     );
                   })}
               </ul>
+              <div>
+                <button className="btn btn-info" onClick={startSearch}>
+                  start filter
+                </button>
+              </div>
             </div>
             <div className="banner"></div>
           </div>
@@ -126,18 +139,23 @@ const VIP = () => {
                   <input
                     type="text"
                     name="keyword"
-                    onKeyPress={handleChange}
+                    onChange={handleKeyword}
+                    onKeyPress={checkEnter}
                     className="form-control"
-                    placeholder="ค้นหางานบริการ"
+                    placeholder={form.keyword}
                   />
-                  <span className="input-group-text" id="basic-addon2">
+                  <button
+                    onClick={startSearch}
+                    className="input-group-text"
+                    id="basic-addon2"
+                  >
                     <i
                       className="fas fa-search"
                       style={{
                         color: "black",
                       }}
                     />
-                  </span>
+                  </button>
                 </div>
               </div>
               <div className="mb-4">
@@ -146,9 +164,7 @@ const VIP = () => {
                   {"  "}
                   <span>
                     ผลการค้นหา{" "}
-                    <span style={{ color: "red" }}>
-                      " {serviceList?.search?.keyword} "
-                    </span>
+                    <span style={{ color: "red" }}>" {form.keyword} "</span>
                     {"  "}
                     บริการเพื่อความเป็น VIP สร้างการแจ้งเตือน.
                   </span>
