@@ -57,10 +57,10 @@ const index = () => {
                 <ColumnNews
                   linkurl={`/${lang}/asset/${assets[0].asset_id}`}
                   imgsrc={
-                    assets[0].pictures
+                    assets[0]?.pictures
                       ? process.env.NEXT_PUBLIC_API_PREFIX +
                         "images/gallery/" +
-                        assets[0].pictures[0].filename
+                        assets[0]?.pictures[0]?.filename
                       : "/../images/img-test.png"
                   }
                   title={
@@ -79,10 +79,10 @@ const index = () => {
               <RowAsset
                 linkurl={`/${lang}/asset/${assets[1].asset_id}`}
                 imgsrc={
-                  assets[1].pictures[0]
+                  assets[1]?.pictures[0]
                     ? process.env.NEXT_PUBLIC_API_PREFIX +
                       "images/gallery/" +
-                      assets[1].pictures[0].filename
+                      assets[1]?.pictures[0]?.filename
                     : "/../images/img-test.png"
                 }
                 title={lang === "th" ? assets[1].title_th : assets[1].title_en}
@@ -99,10 +99,10 @@ const index = () => {
               <RowAsset
                 linkurl={`/${lang}/asset/${assets[2].asset_id}`}
                 imgsrc={
-                  assets[2].pictures[0]
+                  assets[2]?.pictures[0]
                     ? process.env.NEXT_PUBLIC_API_PREFIX +
                       "images/gallery/" +
-                      assets[2].pictures[0].filename
+                      assets[2]?.pictures[0]?.filename
                     : "/../images/img-test.png"
                 }
                 title={lang === "th" ? assets[2].title_th : assets[2].title_en}
