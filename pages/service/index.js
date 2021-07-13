@@ -1,23 +1,88 @@
-import { Container, Row, Col } from "react-bootstrap";
+import AOS from "aos";
+import { useEffect, useState } from "react";
 import Head_meta from "../../components/Head_meta";
 import YellowBreadcrumb from "../../components/shared/YellowBreadcrumb";
 import useTranslation from "next-translate/useTranslation";
 import BaseLayout from "../../components/layout/BaseLayout";
 import Link from "next/link";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchService, fetchServiceType } from "../../redux/actions";
+import pars from "html-react-parser";
 
-const VIP = (props) => {
+const DEFAULT_DATA = {
+  service_type_id: [],
+  keyword: "",
+};
+
+const VIP = () => {
+  const [form, setForm] = useState(DEFAULT_DATA);
   const { t, lang } = useTranslation("common");
-  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  const category = [
-    "ทำความสะอาด",
-    "งานแต่ง",
-    "ช่างไฟฟ้า",
-    "ช่างประปา",
-    "ช่างปูน",
-    "ปูกระเบื้อง",
-    "แต่งสวน",
-    "รับจัดงานเลี้ยง",
-  ];
+
+  const handleKeyword = (e) => {
+    const { name, value } = e.target;
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
+  const checkEnter = (e) => {
+    if (e.keyCode == 13 || e.charCode == 13) {
+      startSearch();
+    }
+  };
+
+  const startSearch = () => {
+    dispatch(
+      fetchService({
+        keyword: form.keyword,
+        service_type_id: form.service_type_id,
+        show_index: 1,
+        limit: 10,
+        country_id: lang === "en" ? 236 : 221,
+      })
+    );
+  };
+
+  const handleCheckbox = (e) => {
+    const { name, value } = e.target;
+    let x = 0;
+
+    if (form[name].includes(value)) {
+      x = form[name].filter((v) => {
+        return v != value;
+      });
+    } else {
+      x = [...form[name], value];
+    }
+
+    setForm({
+      ...form,
+      [name]: x,
+    });
+  };
+
+  const dispatch = useDispatch();
+  const serviceTypeList = useSelector((state) => state.service.serviceTypeList);
+  const serviceList = useSelector((state) => state.service.serviceList);
+
+  useEffect(() => {
+    dispatch(
+      fetchService({
+        keyword: form["keyword"],
+        service_type_id: form["service_type_id"].toString(),
+        show_index: 1,
+        limit: 10,
+        country_id: lang === "en" ? 236 : 221,
+      })
+    );
+    dispatch(fetchServiceType({ limit: 20 }));
+    AOS.init();
+  }, []);
+  // console.log(serviceTypeList);
+  // console.log(serviceList);
+
+  const URL_PREFIX = process.env.NEXT_PUBLIC_API_PREFIX;
+
   return (
     <BaseLayout>
       <Head_meta />
@@ -25,7 +90,11 @@ const VIP = (props) => {
       <YellowBreadcrumb
         data={[
           { name: t("home"), url: `/${lang}` },
-          { name: "VIP", url: "", active: true },
+          {
+            name: lang === "th" ? "งานช่าง" : "Service",
+            url: "",
+            active: true,
+          },
         ]}
       />
 
@@ -34,17 +103,34 @@ const VIP = (props) => {
           <div className="col-lg-3">
             <h4>หมวดหมู่งานบริการ</h4>
             <div>
-              <ul style={{ listStyle: "none" }}>
-                {category.map((item, idx) => {
-                  return (
-                    <li key={idx}>
-                      <input type="checkbox" name="chk" value={idx} /> {item}
-                    </li>
-                  );
-                })}
+              <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                {serviceTypeList.servicetypes &&
+                  serviceTypeList.servicetypes.map((item, idx) => {
+                    return (
+                      <li key={idx}>
+                        <input
+                          onChange={handleCheckbox}
+                          type="checkbox"
+                          checked={form["service_type_id"].includes(
+                            item.service_type_id
+                          )}
+                          name="service_type_id"
+                          value={item.service_type_id}
+                        />{" "}
+                        {lang === "th"
+                          ? item.service_type_name_th
+                          : item.service_type_name_en}
+                      </li>
+                    );
+                  })}
               </ul>
+              <div>
+                <button className="btn btn-info" onClick={startSearch}>
+                  start filter
+                </button>
+              </div>
             </div>
-            <div className="banner">xxx</div>
+            <div className="banner"></div>
           </div>
           <div className="col-lg-9">
             <div className="row">
@@ -52,61 +138,83 @@ const VIP = (props) => {
                 <div className="input-group mb-3">
                   <input
                     type="text"
+                    name="keyword"
+                    onChange={handleKeyword}
+                    onKeyPress={checkEnter}
                     className="form-control"
-                    placeholder="ค้นหางานบริการ"
+                    placeholder={form.keyword}
                   />
-                  <span className="input-group-text" id="basic-addon2">
+                  <button
+                    onClick={startSearch}
+                    className="input-group-text"
+                    id="basic-addon2"
+                  >
                     <i
                       className="fas fa-search"
                       style={{
-                        backgroundColor: "rgb(253, 93, 93)",
-                        color: "white",
+                        color: "black",
                       }}
                     />
-                  </span>
+                  </button>
                 </div>
               </div>
               <div className="mb-4">
                 <h5>
-                  <span>99999</span>
+                  <span style={{ color: "red" }}>{serviceList.totalrows}</span>
+                  {"  "}
                   <span>
-                    ผลการค้นหา " คำค้นหา" บริการเพื่อความเป็น VIP
-                    สร้างการแจ้งเตือน.
+                    ผลการค้นหา{" "}
+                    <span style={{ color: "red" }}>" {form.keyword} "</span>
+                    {"  "}
+                    บริการเพื่อความเป็น VIP สร้างการแจ้งเตือน.
                   </span>
                 </h5>
               </div>
 
-              {arr.map((item, idx) => {
-                return (
-                  <div className="mb-4 row" key={idx}>
-                    <div className="col-lg-4">
-                      <Link href="/service/1">
-                        <a>
-                          <img
-                            src="/../images/img-test.png"
-                            style={{ width: "100%" }}
-                          />
-                        </a>
-                      </Link>
-                    </div>
-                    <div className="col-lg-8 service-text">
-                      <h5>
-                        <Link href="/service/1">
-                          <a>ชื่องานบริการ</a>
-                        </Link>
-                      </h5>
-                      <div>ถนนบางนา-ตราด, บางแก้ว, บางพลี สมุทรปราการ</div>
-                      <div>ราคา ค่าบริการ 1500 / แล้วแต่ผู้ให้บริการกำหนด</div>
-                      <div>
-                        <Link href="/service/1">
-                          <a className="btn btn-info">ติดต่อเรา</a>
+              {serviceList.service &&
+                serviceList.service.map((item, idx) => {
+                  return (
+                    <div
+                      className="mb-4 row"
+                      data-aos="fade"
+                      data-aos-easing="linear"
+                      data-aos-duration="1500"
+                      key={idx}
+                    >
+                      <div className="col-lg-4">
+                        <Link href={`/${lang}/service/${item.service_id}`}>
+                          <a>
+                            <img
+                              src={
+                                URL_PREFIX +
+                                "images/service/service" +
+                                item.service_id +
+                                `_title.jpg`
+                              }
+                              style={{ width: "100%" }}
+                            />
+                          </a>
                         </Link>
                       </div>
-                      <div>ผู้ลงประกาศ : xxxxxxxx</div>
+                      <div className="col-lg-8 service-text">
+                        <h5>
+                          <Link href={`/${lang}/service/${item.service_id}`}>
+                            <a>{item.name}</a>
+                          </Link>
+                        </h5>
+                        <div>
+                          {item.desc_short ? pars(item.desc_short) : " "}
+                        </div>
+
+                        <div>
+                          <Link href={`/${lang}/service/${item.service_id}`}>
+                            <a className="btn btn-info">ติดต่อเรา</a>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
             </div>
           </div>
         </div>

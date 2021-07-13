@@ -1,28 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useTranslation from "next-translate/useTranslation";
-import CardHome from "../../components/Home/cardHome";
-import { Row, Col } from "react-bootstrap";
 import Head_meta from "../../components/Head_meta";
 import { getAssetList } from "../../lib/api";
 import { useRouter } from "next/router";
 import YellowBreadcrumb from "../../components/shared/YellowBreadcrumb";
 import BaseLayout from "../../components/layout/BaseLayout";
 import BarSearch from "../../components/BarSearch";
+import RowAsset from "../../components/card/rowAsset";
+import ColumnNews from "../../components/card/columnNews";
+import Link from "next/link";
+
+import { fetchAsset, fetchAssetTypeById } from "../../redux/actions";
+import { useSelector, useDispatch } from "react-redux";
 
 const index = () => {
+  const dispatch = useDispatch();
   const router = useRouter();
+  const { t, lang } = useTranslation("common");
+
+  const assetList = useSelector((state) => state.asset.assetList);
+  const assetType = useSelector((state) => state.asset.assetType);
   const asset_type_id = router.query.asset_type_id
     ? router.query.asset_type_id
     : 0;
-  // console.log(data)
-  const { t, lang } = useTranslation("common");
-  const params = {
-    asset_type_id,
-    limit: 12,
-    page: 1,
-  };
-  const data = getAssetList(params);
-  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  useEffect(() => {
+    dispatch(fetchAsset({ asset_type_id: asset_type_id, limit: 20, page: 1 }));
+    dispatch(fetchAssetTypeById(asset_type_id));
+  }, []);
+
+  // console.log(assetType);
+  const { assets, totalrows, search } = assetList;
+  const dataslice = assets?.slice(3, assets.length);
   return (
     <BaseLayout>
       <Head_meta />
@@ -30,138 +39,123 @@ const index = () => {
       <YellowBreadcrumb
         data={[
           { name: t("home"), url: `/${lang}` },
-          { name: "ขายบ้านที่ดิน", url: "", active: true },
+          {
+            name:
+              lang === "th" && assetType
+                ? assetType.asset_type_name_th
+                : assetType.asset_type_name_en,
+            url: "",
+            active: true,
+          },
         ]}
       />
       <div className="container">
         <div className="row">
           <div className="col-lg-6">
-            <div className="asset1" style={{ position: "relative" }}>
-              <img src="/../images/img-test.png" style={{ width: "100%" }} />
-              <div className="asset1-text">
-                <h2>ขายทาวน์โฮม อินดี้ บางนา</h2>
-                <div className="address">
-                  ถนนบางนา-ตราด, บางแก้ว, บางพลี สมุทรปราการ
-                </div>
-                <div className="price">฿ 2,400,000</div>
+            {assets && assets[0] && (
+              <div>
+                <ColumnNews
+                  linkurl={`/${lang}/asset/${assets[0].asset_id}`}
+                  imgsrc={
+                    assets[0]?.pictures
+                      ? process.env.NEXT_PUBLIC_API_PREFIX +
+                        "images/gallery/" +
+                        assets[0]?.pictures[0]?.filename
+                      : "/../images/img-test.png"
+                  }
+                  title={
+                    lang === "th" ? assets[0].title_th : assets[0].title_en
+                  }
+                  desc={
+                    lang === "th" ? assets[0].detail_th : assets[0].detail_en
+                  }
+                  price={assets[0].price}
+                />
               </div>
-            </div>
+            )}
           </div>
           <div className="col-lg-6">
-            <div className="row">
-              <div className="col" style={{ marginBottom: 20 }}>
-                <img src="/../images/img-test.png" style={{ width: "100%" }} />
-              </div>
-              <div className="col">
-                <div className="asset2">
-                  <h4>ขายทาวน์โฮม อินดี้ บางนา</h4>
-                  <div className="address">
-                    ถนนบางนา-ตราด, บางแก้ว, บางพลี สมุทรปราการ ถนนบางนา-ตราด,
-                    บางแก้ว, บางพลี สมุทรปราการ ถนนบางนา-ตราด, บางแก้ว, บางพลี
-                    สมุทรปราการ
-                  </div>
-                  <div className="price">฿ 2,400,000</div>
+            {assets && assets[1] && (
+              <RowAsset
+                linkurl={`/${lang}/asset/${assets[1].asset_id}`}
+                imgsrc={
+                  assets[1]?.pictures[0]
+                    ? process.env.NEXT_PUBLIC_API_PREFIX +
+                      "images/gallery/" +
+                      assets[1]?.pictures[0]?.filename
+                    : "/../images/img-test.png"
+                }
+                title={lang === "th" ? assets[1].title_th : assets[1].title_en}
+                desc={lang === "th" ? assets[1].detail_th : assets[1].detail_en}
+                price={assets[1].price}
+                room={assets[1].room}
+                bath={assets[1].bathroom}
+                area={assets[1].dimension_wa}
+                creator={assets[1].cby}
+              />
+            )}
 
-                  <div className="row">
-                    <div className="col">
-                      <img src="/../images/icon-room.png" /> 2 ห้องนอน
-                    </div>
-                    <div className="col">
-                      <img src="/../images/icon-bath.png" /> 2 ห้องน้ำ
-                    </div>
-                  </div>
-                  <div>
-                    <img src="/../images/icon-area.png" /> 56 ตรว.
-                  </div>
-                  <div>ผู้ลงประกาศ : xxxxxxxx</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="row">
-              <div className="col">
-                <img src="/../images/img-test.png" style={{ width: "100%" }} />
-              </div>
-              <div className="col">
-                <div className="asset2">
-                  <h4>ขายทาวน์โฮม อินดี้ บางนา</h4>
-                  <div className="address">
-                    ถนนบางนา-ตราด, บางแก้ว, บางพลี สมุทรปราการ ถนนบางนา-ตราด,
-                    บางแก้ว, บางพลี สมุทรปราการ ถนนบางนา-ตราด, บางแก้ว, บางพลี
-                    สมุทรปราการ
-                  </div>
-                  <div className="price">฿ 2,400,000</div>
-
-                  <div className="row">
-                    <div className="col">
-                      <img src="/../images/icon-room.png" /> 2 ห้องนอน
-                    </div>
-                    <div className="col">
-                      <img src="/../images/icon-bath.png" /> 2 ห้องน้ำ
-                    </div>
-                  </div>
-                  <div>
-                    <img src="/../images/icon-area.png" /> 56 ตรว.
-                  </div>
-                  <div>ผู้ลงประกาศ : xxxxxxxx</div>
-                </div>
-              </div>
-            </div>
+            {assets && assets[2] && (
+              <RowAsset
+                linkurl={`/${lang}/asset/${assets[2].asset_id}`}
+                imgsrc={
+                  assets[2]?.pictures[0]
+                    ? process.env.NEXT_PUBLIC_API_PREFIX +
+                      "images/gallery/" +
+                      assets[2]?.pictures[0]?.filename
+                    : "/../images/img-test.png"
+                }
+                title={lang === "th" ? assets[2].title_th : assets[2].title_en}
+                desc={lang === "th" ? assets[2].detail_th : assets[2].detail_en}
+                price={assets[2].price}
+                room={assets[2].room}
+                bath={assets[2].bathroom}
+                area={assets[2].dimension_wa}
+                creator={assets[2].cby}
+              />
+            )}
           </div>
         </div>
         <div className="row" style={{ marginTop: 50 }}>
           <div className="col-lg-9">
             <div className="assetlist">
-              <h4>ขายบ้านที่ดิน</h4>
-              <button className="btn btn-danger">ขาย</button>
-              <button
-                className="btn btn-default"
-                style={{ border: "2px solid #b02a37", marginLeft: 10 }}
-              >
-                เช่า
-              </button>
-
-              {arr.map((item, idx) => {
-                return (
-                  <div
-                    className="row asset2 "
-                    key={idx}
-                    style={{ marginTop: 20 }}
-                  >
-                    <div className="col-lg-3">
-                      <img
-                        src="/../images/img-test.png"
-                        style={{ width: "100%" }}
-                      />
-                    </div>
-                    <div className="col-lg-9">
-                      <div>
-                        <h4>ขายทาวน์โฮม อินดี้ บางนา</h4>
-                        <div className="address">
-                          ถนนบางนา-ตราด, บางแก้ว, บางพลี สมุทรปราการ
-                          ถนนบางนา-ตราด, บางแก้ว, บางพลี สมุทรปราการ
-                          ถนนบางนา-ตราด, บางแก้ว, บางพลี สมุทรปราการ
-                        </div>
-                        <div className="price">฿ 2,400,000</div>
-
-                        <div className="row">
-                          <div className="col">
-                            <img src="/../images/icon-room.png" /> 2 ห้องนอน
-                          </div>
-                          <div className="col">
-                            <img src="/../images/icon-bath.png" /> 2 ห้องน้ำ
-                          </div>
-                          <div className="col">
-                            <img src="/../images/icon-area.png" /> 56 ตรว.
-                          </div>
-                        </div>
-
-                        <div>ผู้ลงประกาศ : xxxxxxxx</div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+              <div className="mb-3">
+                <h4>
+                  {lang === "th" && assetType
+                    ? assetType.asset_type_name_th
+                    : assetType.asset_type_name_en}
+                </h4>
+                <button className="btn btn-danger">ขาย</button>
+                <button
+                  className="btn btn-default"
+                  style={{ border: "2px solid #b02a37", marginLeft: 10 }}
+                >
+                  เช่า
+                </button>
+              </div>
+              {dataslice &&
+                dataslice.map((item, idx) => {
+                  return (
+                    <RowAsset
+                      key={idx}
+                      linkurl={`/${lang}/asset/${item.asset_id}`}
+                      imgsrc={
+                        item.pictures[0]
+                          ? process.env.NEXT_PUBLIC_API_PREFIX +
+                            "images/gallery/" +
+                            item.pictures[0]?.filename
+                          : `/../images/img-test.png`
+                      }
+                      title={lang === "th" ? item.title_th : item.title_en}
+                      desc={lang === "th" ? item.detail_th : item.detail_en}
+                      price={item.price}
+                      room={item.room}
+                      bath={item.bathroom}
+                      area={item.dimension_wa}
+                      creator={item.cby}
+                    />
+                  );
+                })}
             </div>
             <div
               style={{
@@ -170,7 +164,9 @@ const index = () => {
                 flexDirection: "column",
               }}
             >
-              <button className="btn btn-danger">ดูทั้งหมด</button>
+              <Link href={`/${lang}/asset/filter/`}>
+                <a className="btn btn-danger">ดูทั้งหมด</a>
+              </Link>
             </div>
           </div>
           <div className="col-lg-3">
@@ -181,80 +177,6 @@ const index = () => {
           </div>
         </div>
       </div>
-      {/* <div className="container form-header">
-        <Row>
-          {data &&
-            data.assets.map((asset) => {
-              let pic = asset.pictures[0]
-                ? process.env.NEXT_PUBLIC_API_PREFIX +
-                  "images/gallery/" +
-                  asset.pictures[0].filename
-                : `/assets/images/p-1.jpg`;
-              // console.log(pic)
-              return (
-                <Col
-                  xs={6}
-                  lg={3}
-                  key="{asset.asset_id}"
-                  className="mb-display-r"
-                >
-                  <CardHome
-                    asset_id={asset.asset_id}
-                    url={pic}
-                    name={asset.title_th}
-                    address={asset.place_th}
-                    price={asset.price}
-                  />
-                </Col>
-              );
-            })}
-        </Row>
-      </div> */}
-      <style jsx>{`
-        .asset1 h2 {
-          font-size: 31px;
-        }
-        .asset1 .address {
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          font-size: 16px;
-        }
-        .asset1 .price {
-          font-size: 18px;
-        }
-        .asset1-text {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          padding: 10px;
-          background-color: rgba(0, 0, 0, 0.2);
-          width: 100%;
-          color: white;
-        }
-        .asset2 {
-          font-size: 16px;
-        }
-        .asset2 div {
-          margin-bottom: 10px;
-        }
-        .asset2 h4 {
-          line-clamp: 1;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          font-size: 18px;
-        }
-        .asset2 .address {
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-      `}</style>
     </BaseLayout>
   );
 };

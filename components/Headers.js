@@ -50,20 +50,25 @@ const Headers = () => {
                       id="nav-menu1"
                     >
                       <div className="dropdown-item">
-                        <Link href={`/${lang}/asset?asset_type_id=1`}>
-                          <a>{t("houseandland")}</a>
-                        </Link>
+                        <a href={`/${lang}/asset?asset_type_id=1`}>
+                          {t("houseandland")}
+                        </a>
                       </div>
-
-                      <NavDropdown.Item eventKey="4.2">
-                        {t("coworkingspace")}
-                      </NavDropdown.Item>
-                      <NavDropdown.Item eventKey="4.3">
-                        {t("fortravel")}
-                      </NavDropdown.Item>
-                      <NavDropdown.Item eventKey="4.3">
-                        {t("forrent")}
-                      </NavDropdown.Item>
+                      <div className="dropdown-item">
+                        <a href={`/${lang}/asset?asset_type_id=2`}>
+                          {t("coworkingspace")}
+                        </a>
+                      </div>
+                      <div className="dropdown-item">
+                        <a href={`/${lang}/asset?asset_type_id=3`}>
+                          {t("fortravel")}
+                        </a>
+                      </div>
+                      <div className="dropdown-item">
+                        <a href={`/${lang}/asset?asset_type_id=4`}>
+                          {t("forrent")}
+                        </a>
+                      </div>
                     </NavDropdown>
 
                     <NavDropdown title={t("servicehousing")} id="nav-menu2">
@@ -123,29 +128,37 @@ const Headers = () => {
 
                   <Nav className="mr-auto">
                     <NavDropdown title={t("changelanguage")} id="nav-lang">
-                      <Link href={`/th${router.pathname}`} locale="th">
-                        <a className="dropdown-item" key={lang} eventKey="4.1">
-                          <Image
-                            src="/assets/images/th.svg"
-                            alt="thai"
-                            width={40}
-                            height={17}
-                          />
-                          {t("tha")}
-                        </a>
-                      </Link>
+                      <a
+                        className="dropdown-item"
+                        href={`/th${router.pathname}`}
+                        locale="th"
+                        key={lang}
+                        eventKey="4.1"
+                      >
+                        <Image
+                          src="/assets/images/th.svg"
+                          alt="thai"
+                          width={40}
+                          height={17}
+                        />
+                        {t("tha")}
+                      </a>
 
-                      <Link href={`/en${router.pathname}`} locale="en">
-                        <a className="dropdown-item" key={lang} eventKey="4.2">
-                          <Image
-                            src="/assets/images/en.svg"
-                            alt={t("tha")}
-                            width={40}
-                            height={17}
-                          />
-                          {t("eng")}
-                        </a>
-                      </Link>
+                      <a
+                        className="dropdown-item"
+                        href={`/en${router.pathname}`}
+                        locale="en"
+                        key={lang}
+                        eventKey="4.2"
+                      >
+                        <Image
+                          src="/assets/images/en.svg"
+                          alt={t("tha")}
+                          width={40}
+                          height={17}
+                        />
+                        {t("eng")}
+                      </a>
                     </NavDropdown>
                     <Nav.Item>
                       <Link href={`/${lang}/member`}>

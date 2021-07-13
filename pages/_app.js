@@ -1,8 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/header.css";
 import "../styles/globals.css";
+import "aos/dist/aos.css";
 
-import Head from "next/head";
 import { wrapper } from "../redux/store";
 
 function MyApp({ Component, pageProps }) {
