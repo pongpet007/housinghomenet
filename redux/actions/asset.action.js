@@ -8,7 +8,11 @@ export const fetchAsset = (search) => async (dispatch) => {
     let params = {
       asset_type_id: search.asset_type_id ? search.asset_type_id : 0,
       sale_type_id: search.sale_type_id ? search.sale_type_id : 0,
+<<<<<<< HEAD
       keyword: search.keyword ? search.keyword : "",
+=======
+      keyword: search.keyword ? search.keyword : 0,
+>>>>>>> 2592d676c357556f464290f2f7aa69553859fd26
       is_new: search.is_new ? search.is_new : 0,
       limit: search.limit ? search.limit : 20,
       page: search.page ? search.page : 1,

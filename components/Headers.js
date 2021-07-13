@@ -128,6 +128,7 @@ const Headers = () => {
 
                   <Nav className="mr-auto">
                     <NavDropdown title={t("changelanguage")} id="nav-lang">
+<<<<<<< HEAD
                       <a
                         className="dropdown-item"
                         href={`/th${router.pathname}`}
@@ -159,6 +160,30 @@ const Headers = () => {
                         />
                         {t("eng")}
                       </a>
+=======
+                      <Link href={router.asPath} locale="th" key={1}>
+                        <a className="dropdown-item" eventKey="4.1">
+                          <Image
+                            src="/assets/images/th.svg"
+                            alt="thai"
+                            width={40}
+                            height={17}
+                          />
+                          {t("tha")}
+                        </a>
+                      </Link>
+                      <Link href={`${router.asPath}`} locale="en" key={2}>
+                        <a className="dropdown-item" eventKey="4.2">
+                          <Image
+                            src="/assets/images/en.svg"
+                            alt={t("tha")}
+                            width={40}
+                            height={17}
+                          />
+                          {t("eng")}
+                        </a>
+                      </Link>
+>>>>>>> 2592d676c357556f464290f2f7aa69553859fd26
                     </NavDropdown>
                     <Nav.Item>
                       <Link href={`/${lang}/member`}>
