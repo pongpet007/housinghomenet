@@ -39,10 +39,9 @@ export const fetchNewsTypeById = (news_type_id) => async (dispatch) => {
 export const fetchNews = (search) => async (dispatch) => {
   try {
     let params = {
-      asset_type_id: search.asset_type_id ? search.asset_type_id : 0,
-      sale_type_id: search.sale_type_id ? search.sale_type_id : 0,
+      project_id: search.project_id ? search.project_id : 0,
+      random: search.random ? search.random : 0,
       keyword: search.keyword ? search.keyword : 0,
-      is_new: search.is_new ? search.is_new : 0,
       limit: search.limit ? search.limit : 20,
       page: search.page ? search.page : 1,
     };

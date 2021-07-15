@@ -3,11 +3,11 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 
-const ColumnNews = ({ linkurl, imgsrc, title, desc, price }) => {
+const ColumnNews2 = ({ linkurl, imgsrc, title, desc, price }) => {
   const { t, lang } = useTranslation("common");
   return (
     <>
-      <div className="column-news" style={{ position: "relative" }}>
+      <div className="column-news2" style={{ position: "relative" }}>
         <Link href={linkurl ? linkurl : "#"}>
           <a>
             <img
@@ -17,7 +17,7 @@ const ColumnNews = ({ linkurl, imgsrc, title, desc, price }) => {
           </a>
         </Link>
 
-        <div className="column-news-text">
+        <div className="column-news2-text">
           <h2 className="title">
             <Link href={linkurl ? linkurl : "#"}>
               <a> {title ? title : "Title"} </a>
@@ -30,4 +30,4 @@ const ColumnNews = ({ linkurl, imgsrc, title, desc, price }) => {
   );
 };
 
-export default ColumnNews;
+export default ColumnNews2;

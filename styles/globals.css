@@ -38,7 +38,7 @@ a {
 }
 
 .column-news {
-  height: 350px;
+  /* height: 350px; */
   overflow: hidden;
   font-size: 14px;
 }

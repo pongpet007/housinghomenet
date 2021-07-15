@@ -6,9 +6,12 @@ const API_URL = process.env.NEXT_PUBLIC_API_PREFIX;
 export const fetchAsset = (search) => async (dispatch) => {
   try {
     let params = {
+      keyword: search.keyword ? search.keyword : "",
       asset_type_id: search.asset_type_id ? search.asset_type_id : 0,
       sale_type_id: search.sale_type_id ? search.sale_type_id : 0,
-      keyword: search.keyword ? search.keyword : "",
+      project_id: search.project_id ? search.project_id : 0,
+      only_project: search.only_project ? search.only_project : 0,
+      is_random: search.is_random ? search.is_random : 0,
       is_new: search.is_new ? search.is_new : 0,
       limit: search.limit ? search.limit : 20,
       page: search.page ? search.page : 1,

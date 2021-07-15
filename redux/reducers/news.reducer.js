@@ -1,9 +1,9 @@
 import * as types from "../types";
 
 const initialState = {
-  newsTypeList: {},
+  newsTypeList: {}, 
+  newsType: {}, 
   newsList: {},
-  newsType: {},
   news: {},
 };
 
