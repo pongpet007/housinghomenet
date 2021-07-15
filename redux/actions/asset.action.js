@@ -11,6 +11,9 @@ export const fetchAsset = (search) => async (dispatch) => {
       sale_type_id: search.sale_type_id ? search.sale_type_id : 0,
       project_id: search.project_id ? search.project_id : 0,
       only_project: search.only_project ? search.only_project : 0,
+      only_picture_main: search.only_picture_main
+        ? search.only_picture_main
+        : 0,
       is_random: search.is_random ? search.is_random : 0,
       is_new: search.is_new ? search.is_new : 0,
       limit: search.limit ? search.limit : 20,
