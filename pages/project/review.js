@@ -1,11 +1,28 @@
-import { Container, Row, Col } from "react-bootstrap";
 import Head_meta from "../../components/Head_meta";
 import YellowBreadcrumb from "../../components/shared/YellowBreadcrumb";
 import useTranslation from "next-translate/useTranslation";
 import BaseLayout from "../../components/layout/BaseLayout";
 import ColumnNews2 from "../../components/card/columnNews2";
+import HTMLReactParser from "html-react-parser";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { fetchNews } from "../../redux/actions";
+import { useSelector, useDispatch } from "react-redux";
+
 const Review = (props) => {
   const { t, lang } = useTranslation("common");
+  const dispatch = useDispatch();
+
+  const newsList = useSelector((state) => state.news.newsList);
+
+  const striptag = (str) => {
+    const regex = /(<([^>]+)>)|(&nbsp;)/gi;
+    return str.replace(regex, "");
+  };
+  useEffect(() => {
+    dispatch(fetchNews({ only_project: 1, is_random: 1, limit: 12 }));
+  }, []);
+
   return (
     <BaseLayout>
       <Head_meta />
@@ -20,20 +37,48 @@ const Review = (props) => {
       <div className="container">
         <div className="row" style={{ paddingBottom: 30, paddingTop: 30 }}>
           <div className="sugguestion">
-            <h4>
-              รีวิวโครงการใหม่
-              <span style={{ float: "right" }}>ดูเพิ่มเติมทั้งหมด</span>
-            </h4>
+            <h4>รีวิวโครงการใหม่</h4>
           </div>
         </div>
         <div className="row">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((item, idx) => {
-            return (
-              <div className="col-lg-3">
-                <ColumnNews2 />
-              </div>
-            );
-          })}
+          {newsList &&
+            newsList?.news?.map((item, idx) => {
+              return (
+                <div className="col-lg-3" key={idx}>
+                  <ColumnNews2
+                    linkurl={`/${lang}/news/${item.news_id}`}
+                    imgsrc={
+                      process.env.NEXT_PUBLIC_API_PREFIX +
+                      "images/news/news" +
+                      item.news_id +
+                      "_title.jpg"
+                    }
+                    title={
+                      lang == "th"
+                        ? item.language_th.length > 0
+                          ? item.language_th[0].name
+                          : ""
+                        : item.language_en.length > 0
+                        ? item.language_en[0].name
+                        : ""
+                    }
+                    desc={
+                      lang == "th"
+                        ? item.language_th.length > 0
+                          ? HTMLReactParser(
+                              striptag(item.language_th[0].desc_short)
+                            )
+                          : "desc short"
+                        : item.language_en.length > 0
+                        ? HTMLReactParser(
+                            striptag(item.language_en[0].desc_short)
+                          )
+                        : "desc short"
+                    }
+                  />
+                </div>
+              );
+            })}
         </div>
       </div>
     </BaseLayout>

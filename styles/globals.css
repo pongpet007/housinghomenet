@@ -71,6 +71,32 @@ a {
   transition: all 1s;
 }
 
+.column-news2 {
+  overflow: hidden;
+  font-size: 16px;
+}
+.column-news2 h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.column-news2 .title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 15px;
+}
+.column-news2 .desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 15px;
+  text-indent: 40px;
+}
+
 .column-project {
   font-size: 16px;
 }

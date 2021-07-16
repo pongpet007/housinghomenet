@@ -5,9 +5,10 @@ import BaseLayout from "../../components/layout/BaseLayout";
 import ColumnProject from "../../components/card/columnProject";
 import ColumnNews from "../../components/card/columnNews";
 import ColumnNews2 from "../../components/card/columnNews2";
-
+import HTMLReactParser from "html-react-parser";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { fetchAsset } from "../../redux/actions";
+import { fetchAsset, fetchNews } from "../../redux/actions";
 import { useSelector, useDispatch } from "react-redux";
 
 const Promotion = (props) => {
@@ -15,7 +16,12 @@ const Promotion = (props) => {
   const dispatch = useDispatch();
 
   const assetList = useSelector((state) => state.asset.assetList);
+  const newsList = useSelector((state) => state.news.newsList);
 
+  const striptag = (str) => {
+    const regex = /(<([^>]+)>)|(&nbsp;)/gi;
+    return str.replace(regex, "");
+  };
   useEffect(() => {
     dispatch(
       fetchAsset({
@@ -23,12 +29,12 @@ const Promotion = (props) => {
         only_picture_main: 0,
         is_random: 1,
         limit: 5,
-        page: 1,
       })
     );
+    dispatch(fetchNews({ only_project: 1, is_random: 1, limit: 4 }));
   }, []);
 
-  console.log(assetList);
+  // console.log(newsList);
 
   const item1 = assetList?.assets?.filter((item) => {
     if (item?.pictures?.length > 5) {
@@ -36,7 +42,7 @@ const Promotion = (props) => {
     }
   });
 
-  if (item1?.length > 0) console.log(item1[0]);
+  // if (item1?.length > 0) console.log(item1[0]);
 
   const assetMain =
     item1?.length > 0 ? (
@@ -119,7 +125,11 @@ const Promotion = (props) => {
           <div className="sugguestion">
             <h4>
               โครงการใหม่แนะนำ{" "}
-              <span style={{ float: "right" }}>ดูเพิ่มเติมทั้งหมด</span>
+              <span style={{ float: "right" }}>
+                <Link href="#">
+                  <a>ดูเพิ่มเติมทั้งหมด</a>
+                </Link>{" "}
+              </span>
             </h4>
           </div>
         </div>
@@ -157,23 +167,53 @@ const Promotion = (props) => {
           <div className="sugguestion">
             <h4>
               รีวิวโครงการใหม่
-              <span style={{ float: "right" }}>ดูเพิ่มเติมทั้งหมด</span>
+              <span style={{ float: "right" }}>
+                <Link href={`/${lang}/project/review`}>
+                  <a>ดูเพิ่มเติมทั้งหมด</a>
+                </Link>
+              </span>
             </h4>
           </div>
         </div>
         <div className="row">
-          <div className="col-lg-3">
-            <ColumnNews2 />
-          </div>
-          <div className="col-lg-3">
-            <ColumnNews2 />
-          </div>
-          <div className="col-lg-3">
-            <ColumnNews2 />
-          </div>
-          <div className="col-lg-3">
-            <ColumnNews2 />
-          </div>
+          {newsList &&
+            newsList?.news?.map((item, idx) => {
+              return (
+                <div className="col-lg-3" key={idx}>
+                  <ColumnNews2
+                    linkurl={`/${lang}/news/${item.news_id}`}
+                    imgsrc={
+                      process.env.NEXT_PUBLIC_API_PREFIX +
+                      "images/news/news" +
+                      item.news_id +
+                      "_title.jpg"
+                    }
+                    title={
+                      lang == "th"
+                        ? item.language_th.length > 0
+                          ? item.language_th[0].name
+                          : ""
+                        : item.language_en.length > 0
+                        ? item.language_en[0].name
+                        : ""
+                    }
+                    desc={
+                      lang == "th"
+                        ? item.language_th.length > 0
+                          ? HTMLReactParser(
+                              striptag(item.language_th[0].desc_short)
+                            )
+                          : "desc short"
+                        : item.language_en.length > 0
+                        ? HTMLReactParser(
+                            striptag(item.language_en[0].desc_short)
+                          )
+                        : "desc short"
+                    }
+                  />
+                </div>
+              );
+            })}
         </div>
       </div>
     </BaseLayout>

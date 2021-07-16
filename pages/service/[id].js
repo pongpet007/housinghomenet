@@ -1,4 +1,3 @@
-import { Container, Row, Col } from "react-bootstrap";
 import Head_meta from "../../components/Head_meta";
 import YellowBreadcrumb from "../../components/shared/YellowBreadcrumb";
 import useTranslation from "next-translate/useTranslation";
