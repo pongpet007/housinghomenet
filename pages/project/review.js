@@ -4,7 +4,7 @@ import useTranslation from "next-translate/useTranslation";
 import BaseLayout from "../../components/layout/BaseLayout";
 import ColumnNews2 from "../../components/card/columnNews2";
 import HTMLReactParser from "html-react-parser";
-import Link from "next/link";
+
 import React, { useEffect, useState } from "react";
 import { fetchNews } from "../../redux/actions";
 import { useSelector, useDispatch } from "react-redux";
@@ -35,7 +35,7 @@ const Review = (props) => {
       />
 
       <div className="container">
-        <div className="row" style={{ paddingBottom: 30, paddingTop: 30 }}>
+        <div className="row">
           <div className="sugguestion">
             <h4>รีวิวโครงการใหม่</h4>
           </div>

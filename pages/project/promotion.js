@@ -114,23 +114,16 @@ const Promotion = (props) => {
       <YellowBreadcrumb
         data={[
           { name: t("home"), url: `/${lang}` },
-          { name: t("Promotion"), url: "", active: true },
+          { name: t("Promotion"), active: true },
         ]}
       />
 
       <div className="container">
         {assetMain}
 
-        <div className="row" style={{ paddingBottom: 30 }}>
+        <div className="row">
           <div className="sugguestion">
-            <h4>
-              โครงการใหม่แนะนำ{" "}
-              <span style={{ float: "right" }}>
-                <Link href="#">
-                  <a>ดูเพิ่มเติมทั้งหมด</a>
-                </Link>{" "}
-              </span>
-            </h4>
+            <h4>โครงการใหม่แนะนำ</h4>
           </div>
         </div>
 
@@ -142,6 +135,7 @@ const Promotion = (props) => {
                   <div className="col-lg-3" key={idx}>
                     <ColumnProject
                       color="red"
+                      linkproject={`/${lang}/project/${item.project_id}`}
                       linkurl={`/${lang}/asset/${item.asset_id}`}
                       typeName={
                         lang == "th"
@@ -163,7 +157,7 @@ const Promotion = (props) => {
             })}
         </div>
 
-        <div className="row" style={{ paddingBottom: 30, paddingTop: 30 }}>
+        <div className="row">
           <div className="sugguestion">
             <h4>
               รีวิวโครงการใหม่

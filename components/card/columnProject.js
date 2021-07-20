@@ -4,7 +4,15 @@ import Images from "next/image";
 import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 
-const ColumnProject = ({ linkurl, imgsrc, title, desc, color, typeName }) => {
+const ColumnProject = ({
+  linkurl,
+  linkproject,
+  imgsrc,
+  title,
+  desc,
+  color,
+  typeName,
+}) => {
   const { t, lang } = useTranslation("common");
   return (
     <>
@@ -12,16 +20,20 @@ const ColumnProject = ({ linkurl, imgsrc, title, desc, color, typeName }) => {
         <Images src={imgsrc} alt={linkurl} width={360} height={270} />
         <Card.Body>
           <div>
-            <Link href={linkurl}>
+            <Link href={linkproject ? linkproject : "#"}>
               {color ? (
                 <a
                   className="btn btn-danger"
+                  target="_blank"
                   style={{ backgroundColor: color, border: 0 }}
                 >
                   {typeName ? typeName : ""}
                 </a>
               ) : (
-                <a className="btn btn-danger"> {typeName ? typeName : ""}</a>
+                <a className="btn btn-danger" target="_blank">
+                  {" "}
+                  {typeName ? typeName : ""}
+                </a>
               )}
             </Link>
           </div>

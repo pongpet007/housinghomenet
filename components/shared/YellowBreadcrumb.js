@@ -15,7 +15,7 @@ const YellowBreadcrumb = (props) => {
                   return (
                     <Breadcrumb.Item
                       key={idx}
-                      href={item.url ? item.url : ""}
+                      href={item.url ? item.url : "#"}
                       active={item.active}
                     >
                       {item.name}

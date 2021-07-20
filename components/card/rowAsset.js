@@ -25,7 +25,7 @@ const RowAsset = ({
           >
             <div style={{ position: "absolute", bottom: 0 }}>
               <Link href={linkurl ? linkurl : "#"}>
-                <a>
+                <a target="_blank">
                   <img src={imgsrc} style={{ width: "100%" }} />
                 </a>
               </Link>

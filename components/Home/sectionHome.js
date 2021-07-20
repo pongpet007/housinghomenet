@@ -26,7 +26,12 @@ function sectionHome() {
         <div className="row">
           <div className="col-lg-12">
             <div className="sugguestion">
-              <h4>แนะนำสำหรับคุณ</h4>
+              <h4>
+                แนะนำสำหรับคุณ
+                <a href={`/${lang}/service/`} target="_blank">
+                  <span style={{ float: "right" }}>{t("viewmore")}</span>
+                </a>
+              </h4>
             </div>
           </div>
           <div className="col-lg-12">
@@ -62,7 +67,12 @@ function sectionHome() {
         <div className="row">
           <div className="col-lg-12" style={{ marginTop: 20 }}>
             <div className="sugguestion">
-              <h4>โครงการคัดสรรแล้วสำหรับคุณ</h4>
+              <h4>
+                โครงการคัดสรรแล้วสำหรับคุณ{" "}
+                <a href={`/${lang}/project/promotion`} target="_blank">
+                  <span style={{ float: "right" }}>{t("viewmore")}</span>
+                </a>
+              </h4>
             </div>
           </div>
           <div className="col-lg-12">
@@ -79,6 +89,7 @@ function sectionHome() {
                         }
                         color="pink"
                         linkurl={`/${lang}/asset/${item.asset_id}`}
+                        linkproject={`/${lang}/project/${item.project_id}`}
                         imgsrc={
                           item.pictures[0]
                             ? api_url +

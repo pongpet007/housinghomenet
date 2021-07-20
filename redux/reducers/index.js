@@ -4,6 +4,7 @@ import { bannerReducer } from "./banner.reducer";
 import { homeReducer } from "./home.reducer";
 import { serviceReducer } from "./service.reducer";
 import { newsReducer } from "./news.reducer";
+import { projectReducer } from "./project.reducer";
 
 const rootReducer = combineReducers({
   asset: assetReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   home: homeReducer,
   service: serviceReducer,
   news: newsReducer,
+  project: projectReducer,
 });
 
 export default rootReducer;

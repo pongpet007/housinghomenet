@@ -230,7 +230,7 @@ const asset_item = ({ data: { asset } }) => {
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
+                    allowfullScreen="true"
                   ></iframe>
                 </Col>
               </Row>

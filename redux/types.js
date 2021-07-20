@@ -1,5 +1,8 @@
 export const SET_NAME = "SET_NAME";
 
+export const GET_PROJECT = "GET_PROJECT";
+export const GET_PROJECT_BY_ID = "GET_PROJECT_BY_ID";
+
 export const GET_HOME_ASSET1 = "GET_HOME_ASSET1";
 export const GET_HOME_ASSET2 = "GET_HOME_ASSET2";
 

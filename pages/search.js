@@ -1,7 +1,7 @@
 import React from "react";
 import useTranslation from "next-translate/useTranslation";
 import Head_meta from "../components/Head_meta";
-import { getAssetList } from "../lib/api";
+
 import { useRouter } from "next/router";
 import YellowBreadcrumb from "../components/shared/YellowBreadcrumb";
 import BaseLayout from "../components/layout/BaseLayout";
@@ -10,17 +10,7 @@ import Link from "next/link";
 
 const search = () => {
   const router = useRouter();
-  const asset_type_id = router.query.asset_type_id
-    ? router.query.asset_type_id
-    : 0;
-  // console.log(data)
   const { t, lang } = useTranslation("common");
-  //   const params = {
-  //     asset_type_id,
-  //     limit: 12,
-  //     page: 1,
-  //   };
-  //   const data = getAssetList(params);
 
   return (
     <BaseLayout>
