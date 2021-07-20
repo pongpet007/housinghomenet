@@ -30,7 +30,7 @@ const detail = ({ data }) => {
       <YellowBreadcrumb
         data={[
           { name: t("home"), url: `/${lang}` },
-          { name: t("news"), url: `/${lang}/project/promotion` },
+          { name: t("news"), url: `/${lang}/project/review` },
           { name: title, url: "", active: true },
         ]}
       />
