@@ -24,7 +24,7 @@ export default function sectionService() {
 
   let pic = "";
   return (
-    <div className="bg-service">
+    <div className="bg-service" style={{ marginTop: 30 }}>
       <div className="container">
         <div className="mb-4">
           <div className="row">

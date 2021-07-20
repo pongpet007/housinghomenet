@@ -66,7 +66,7 @@ function sectionHome() {
             </div>
           </div>
           <div className="col-lg-12">
-            <dir className="row">
+            <div className="row">
               {assetList2.assets &&
                 assetList2.assets.map((item, idx) => {
                   return (
@@ -97,7 +97,7 @@ function sectionHome() {
                     </div>
                   );
                 })}
-            </dir>
+            </div>
           </div>
         </div>
       </div>
