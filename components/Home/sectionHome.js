@@ -65,7 +65,7 @@ function sectionHome() {
         </div>
 
         <div className="row">
-          <div className="col-lg-12" style={{ marginTop: 20 }}>
+          <div className="col-lg-12">
             <div className="sugguestion">
               <h4>
                 โครงการคัดสรรแล้วสำหรับคุณ{" "}
